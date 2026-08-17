@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://kerrandcompanyholdings.com/">
 <meta property="og:site_name" content="Kerr &amp; Company LLC">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"Kerr & Company LLC","url":"https://kerrandcompanyholdings.com/","legalName":"Kerr & Company LLC","address":{"@type":"PostalAddress","addressLocality":"Grand Rapids","addressRegion":"MI","addressCountry":"US"},"email":"matthew@kerrandcompanyholdings.com","founder":{"@type":"Person","name":"Matthew Kerr"},"brand":[{"@type":"Brand","name":"Crisp"},{"@type":"Brand","name":"Docket SEO"},{"@type":"Brand","name":"AdPlaybook"},{"@type":"Brand","name":"Outlier"},{"@type":"Brand","name":"Built by Kerr"}]}
+{"@context":"https://schema.org","@type":"Organization","name":"Kerr & Company LLC","url":"https://kerrandcompanyholdings.com/","legalName":"Kerr & Company LLC","address":{"@type":"PostalAddress","addressLocality":"Grand Rapids","addressRegion":"MI","addressCountry":"US"},"email":"matthew@kerrandcompanyholdings.com","brand":[{"@type":"Brand","name":"Crisp"},{"@type":"Brand","name":"Docket SEO"},{"@type":"Brand","name":"AdPlaybook"},{"@type":"Brand","name":"Outlier"},{"@type":"Brand","name":"Built by Kerr"}]}
 </script>
 <style>
 /* An entity page, not a landing page. It exists so that a customer, a payment
@@ -21,6 +21,7 @@
    screen, and reach the governing document for whichever product they bought.
    So: a record, set like a record. Nothing here sells anything. */
 :root{
+  color-scheme:light;
   --paper:#f2efe9;
   --card:#fbf9f5;
   --sink:#e7e3da;
@@ -34,11 +35,13 @@
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
+    color-scheme:dark;
     --paper:#16171a; --card:#1d1f23; --sink:#111214;
     --ink:#e9e7e1; --ink-2:#a09c93; --rule:#3b3e45; --mark:#9db3a4;
   }
 }
 :root[data-theme="dark"]{
+  color-scheme:dark;
   --paper:#16171a; --card:#1d1f23; --sink:#111214;
   --ink:#e9e7e1; --ink-2:#a09c93; --rule:#3b3e45; --mark:#9db3a4;
 }
@@ -59,7 +62,7 @@ a:hover{text-decoration-color:var(--mark)}
 dl{margin:1rem 0;display:grid;grid-template-columns:auto 1fr;gap:.4rem 1.4rem}
 dt{font-family:var(--sans);font-size:.76rem;font-weight:600;letter-spacing:.09em;
   text-transform:uppercase;color:var(--ink-2);padding-top:.22rem}
-dd{margin:0;color:var(--ink)}
+dd{margin:0;color:var(--ink);overflow-wrap:break-word}
 .products{list-style:none;padding:0;margin:1.2rem 0 0;display:grid;gap:.7rem}
 .products li{background:var(--card);border:1px solid var(--rule);border-radius:2px;
   padding:.9rem 1.05rem}
@@ -67,14 +70,13 @@ dd{margin:0;color:var(--ink)}
   color:var(--ink);text-decoration:none}
 .products .what{display:block;font-size:.92rem;color:var(--ink-2);margin:.15rem 0 .45rem}
 .products .docs{font-size:.85rem;color:var(--ink-2)}
-.products .docs a{color:var(--ink-2)}
 footer{border-top:1px solid var(--rule);background:var(--sink);margin-top:3.5rem}
 .foot{max-width:var(--measure);margin:0 auto;padding:1.8rem 1.5rem 2.4rem;
   font-size:.86rem;color:var(--ink-2)}
 :focus-visible{outline:2px solid var(--mark);outline-offset:2px}
 @media (max-width:34rem){
   main{padding:3rem 1.15rem 3.5rem}
-  dl{grid-template-columns:1fr;gap:.15rem}
+  dl{grid-template-columns:minmax(0,1fr);gap:.15rem}
   dt{padding-top:.7rem}
 }
 </style>
@@ -98,10 +100,10 @@ footer{border-top:1px solid var(--rule);background:var(--sink);margin-top:3.5rem
   </dl>
 
   <h2>What it publishes</h2>
-  <p>Each product is governed by its own terms, privacy policy and refund policy.
-  Those documents control — nothing on this page varies them.</p>
+  <p>Each product is governed by its own terms and privacy policy. Those
+  documents control — nothing on this page varies them.</p>
 
-  <ul class="products">
+  <ul class="products" role="list">
     <li>
       <a class="name" href="https://crispvideo.app/">Crisp</a>
       <span class="what">Offline AI video and photo upscaler with an auto-editor, for Mac.</span>
@@ -111,14 +113,14 @@ footer{border-top:1px solid var(--rule);background:var(--sink);margin-top:3.5rem
     </li>
     <li>
       <a class="name" href="https://docketseo.app/">Docket SEO</a>
-      <span class="what">A site audit that returns everything wrong, in the order to fix it.</span>
+      <span class="what">A site audit that ranks what it finds wrong in the order to fix it.</span>
       <span class="docs"><a href="https://docketseo.app/legal/terms/">Terms</a> ·
       <a href="https://docketseo.app/legal/privacy/">Privacy</a> ·
       <a href="https://docketseo.app/legal/refunds/">Refunds</a></span>
     </li>
     <li>
       <a class="name" href="https://adplaybook.app/">AdPlaybook</a>
-      <span class="what">Ad campaigns drafted against each platform&rsquo;s published limits, with every claim sourced.</span>
+      <span class="what">Ad campaigns drafted against each platform&rsquo;s published limits, and told what it could not check.</span>
       <span class="docs"><a href="https://adplaybook.app/terms/">Terms</a> ·
       <a href="https://adplaybook.app/privacy/">Privacy</a> ·
       <a href="https://adplaybook.app/contact/">Contact</a></span>
@@ -141,11 +143,12 @@ footer{border-top:1px solid var(--rule);background:var(--sink);margin-top:3.5rem
   <p>Software purchases are handled by <strong>Polar</strong> as merchant of
   record. Polar takes the payment, is responsible for sales tax and VAT where it
   applies, and issues the licence key by email. Your receipt comes from Polar,
-  and a refund request may be sent either to Polar or to the address above.</p>
-  <p>Refund windows differ by product and are stated on each product&rsquo;s own
-  refunds page, linked above. Those pages are authoritative; this one deliberately
-  does not restate the terms, because a summary that drifts from the document it
-  summarises is worse than no summary.</p>
+  and each product&rsquo;s own refund terms name where a refund request should be
+  sent.</p>
+  <p>Refund windows differ by product and are stated in each product&rsquo;s
+  refund policy or terms, linked above. Those documents are authoritative; this
+  page deliberately does not restate them, because a summary that drifts from the
+  document it summarises is worse than no summary.</p>
 
   <h2>A note on the software</h2>
   <p>These products use machine-learning models that produce plausible output
