@@ -1,0 +1,12 @@
+# Kerr & Company LLC — https://kerrandcompanyholdings.com/
+# This is a public entity page. Everything here is meant to be found.
+#
+# Written fresh rather than copied. The services repo's robots.txt was
+# advertising an internal ops path, which is how a private board ended up
+# discoverable on a public domain. Nothing internal is served from here and
+# nothing internal may ever be added to this repository.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://kerrandcompanyholdings.com/sitemap.xml
