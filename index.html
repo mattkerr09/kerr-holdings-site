@@ -45,6 +45,7 @@
   --rule:#c5c0b5;       /* non-text only */
   --mark:#3a4a3f;       /* one restrained tone, used only on rules and links */
   --serif:ui-serif,"Iowan Old Style",Charter,Georgia,Cambria,serif;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   --measure:38rem;
 }
@@ -84,9 +85,10 @@ strong{color:var(--ink);font-weight:600}
 a{color:var(--ink);text-decoration-color:var(--rule);text-underline-offset:3px}
 a:hover{text-decoration-color:var(--mark)}
 dl{margin:1rem 0;display:grid;grid-template-columns:auto 1fr;gap:.4rem 1.4rem}
-dt{font-family:var(--sans);font-size:.76rem;font-weight:600;letter-spacing:.09em;
+dt{font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.055em;
   text-transform:uppercase;color:var(--ink-2);padding-top:.22rem}
 dd{margin:0;color:var(--ink);overflow-wrap:break-word}
+dd.ident{font-family:var(--mono);font-size:.94em;letter-spacing:-.01em}
 .products{list-style:none;padding:0;margin:1.2rem 0 0;display:grid;gap:.7rem}
 .products li{background:var(--card);border:1px solid var(--rule);border-radius:2px;
   padding:.9rem 1.05rem}
@@ -131,7 +133,7 @@ footer{border-top:1px solid var(--rule);background:var(--sink);margin-top:3.5rem
 .frame{margin:0;border:1px solid var(--rule);border-radius:10px;overflow:hidden;
   background:var(--card);box-shadow:0 1px 2px rgba(0,0,0,.04),0 12px 32px -12px rgba(0,0,0,.10)}
 .frame img{display:block;width:100%;height:auto}
-.frame-cap{font-family:var(--sans);font-size:.76rem;letter-spacing:.04em;
+.frame-cap{font-family:var(--mono);font-size:.72rem;letter-spacing:.015em;
   color:var(--ink-2);padding:.55rem .8rem;border-bottom:1px solid var(--rule);
   background:var(--sink)}
 @media (min-width:64rem){
@@ -173,7 +175,7 @@ html,body{overflow-x:hidden}
     <dt>Legal name</dt><dd>Kerr &amp; Company LLC</dd>
     <dt>Form</dt><dd>Limited liability company, State of Michigan, United States</dd>
     <dt>Location</dt><dd>Grand Rapids, Michigan</dd>
-    <dt>Contact</dt><dd><a href="mailto:matthew@kerrandcompanyholdings.com">matthew@kerrandcompanyholdings.com</a></dd>
+    <dt>Contact</dt><dd class="ident"><a href="mailto:matthew@kerrandcompanyholdings.com">matthew@kerrandcompanyholdings.com</a></dd>
   </dl>
   </div>
 
