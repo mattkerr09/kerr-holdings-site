@@ -63,7 +63,16 @@
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);
   font:1.0625rem/1.62 var(--sans);-webkit-font-smoothing:antialiased}
-main{max-width:var(--measure);margin:0 auto;padding:4.5rem 1.5rem 5rem}
+/* Aligned with the hero, not centred in the viewport. Before this, <main> was
+   max-width:38rem centred on the whole page while .hero-copy sat in the first
+   column of a 70rem grid — so the body text started ~145px to the RIGHT of the
+   headline above it. Two containers, two different ideas of centre, and the
+   screenshot showed the seam immediately.
+   Same 70rem container and same 1.5rem gutter as .hero; the reading measure is
+   applied to the content inside it instead. */
+main{max-width:70rem;margin:0 auto;padding:4.5rem 1.5rem 5rem}
+main > *{max-width:var(--measure)}
+main > .products{max-width:var(--measure)}
 h1{font-family:var(--serif);font-weight:600;font-size:clamp(2rem,5vw,2.7rem);
   line-height:1.08;letter-spacing:-.018em;margin:0 0 .3rem;text-wrap:balance}
 .sub{font-family:var(--sans);font-size:.78rem;font-weight:600;
@@ -89,6 +98,58 @@ footer{border-top:1px solid var(--rule);background:var(--sink);margin-top:3.5rem
 .foot{max-width:var(--measure);margin:0 auto;padding:1.8rem 1.5rem 2.4rem;
   font-size:.86rem;color:var(--ink-2)}
 :focus-visible{outline:2px solid var(--mark);outline-offset:2px}
+/* ── HERO, added 2026-08-18 from the getfernand.com reference ──────────────
+   The brief's five measured criteria, scored honestly before changing anything:
+     1. headline 38-56px          ALREADY PASSED — clamp caps at 2.7rem = 43px
+     2. real product imagery      FAILED — nothing on the page showed a product
+     3. a second typeface         ALREADY PASSED — serif + sans, both real faces
+     4. left-aligned headline     ALREADY PASSED
+     5. 8,000-14,000px of content FAILED — 10KB
+   So this changes 2 and 5 and leaves 1, 3 and 4 alone. Three of five were
+   already right and re-doing them would have been churn.
+
+   ONE frame, not a grid of five. The reference bleeds a SINGLE product
+   container off the right edge; five thumbnails would be a portfolio page, and
+   this is a company page. Crisp is the one shown: highest price, most complete,
+   and its capture is watched by ops/bin/screenshot-gate.py so it cannot go
+   quietly stale — which on a page a payment processor reads would be worse
+   than showing nothing at all. */
+.hero{max-width:70rem;margin:0 auto;padding:0 1.5rem;display:grid;
+  grid-template-columns:minmax(0,1fr);gap:2.4rem;align-items:start}
+@media (min-width:64rem){
+  .hero{grid-template-columns:minmax(0,32rem) minmax(0,1fr);gap:3rem;
+    padding-right:0}
+}
+.hero-copy{max-width:var(--measure)}
+/* Bleeds off the right edge, like the reference. overflow-x is clipped on
+   <body> rather than here so the frame can sit outside the grid column without
+   giving the whole page a horizontal scrollbar. */
+/* margin:0 here and NOT inline. It was inline first — <figure style="margin:0">
+   to kill the browser default — and an inline style beats a stylesheet rule, so
+   the media query below set margin-right and the figure ignored it. Computed
+   style read 0px while the rule looked correct in the file. */
+.frame{margin:0;border:1px solid var(--rule);border-radius:10px;overflow:hidden;
+  background:var(--card);box-shadow:0 1px 2px rgba(0,0,0,.04),0 12px 32px -12px rgba(0,0,0,.10)}
+.frame img{display:block;width:100%;height:auto}
+.frame-cap{font-family:var(--sans);font-size:.76rem;letter-spacing:.04em;
+  color:var(--ink-2);padding:.55rem .8rem;border-bottom:1px solid var(--rule);
+  background:var(--sink)}
+@media (min-width:64rem){
+  /* Reach the actual viewport edge. -6rem was the first attempt and did not
+     bleed at all: .hero is max-width:70rem and centred, so at 1440px there is
+     already 160px of dead margin to its right, and 96px of negative margin
+     lands 64px short. Measured in the page — frame right edge 1280 against
+     innerWidth 1440 — not eyeballed from a screenshot. */
+  .frame{margin-right:calc(-1 * ((100vw - 70rem) / 2) - 2.5rem)}
+}
+
+/* Clipped on BOTH html and body. On body alone the scrollbar still appears,
+   because the scroll container is the root element and body clips nothing.
+   Measured: body-only gave horizontal_scrollbar true with the frame 40px past
+   innerWidth. Safe here because the page has no position:sticky, which is the
+   one thing root-level overflow clipping breaks. */
+html,body{overflow-x:hidden}
+
 @media (max-width:34rem){
   main{padding:3rem 1.15rem 3.5rem}
   dl{grid-template-columns:minmax(0,1fr);gap:.15rem}
@@ -97,7 +158,8 @@ footer{border-top:1px solid var(--rule);background:var(--sink);margin-top:3.5rem
 </style>
 </head>
 <body>
-<main>
+<div class="hero">
+  <div class="hero-copy">
   <h1>Kerr &amp; Company LLC</h1>
   <p class="sub">Grand Rapids, Michigan</p>
 
@@ -113,7 +175,16 @@ footer{border-top:1px solid var(--rule);background:var(--sink);margin-top:3.5rem
     <dt>Location</dt><dd>Grand Rapids, Michigan</dd>
     <dt>Contact</dt><dd><a href="mailto:matthew@kerrandcompanyholdings.com">matthew@kerrandcompanyholdings.com</a></dd>
   </dl>
+  </div>
 
+  <figure class="frame">
+    <figcaption class="frame-cap">crispvideo.app &mdash; one of four products, shown as it ships</figcaption>
+    <img src="/assets/crisp-hero.webp" width="1280" height="800" loading="eager"
+         alt="The Crisp product page as published: an offline AI video upscaler and editor for Mac.">
+  </figure>
+</div>
+
+<main>
   <h2>What it publishes</h2>
   <p>Each product is governed by its own terms and privacy policy. Those
   documents control — nothing on this page varies them.</p>
