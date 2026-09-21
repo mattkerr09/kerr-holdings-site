@@ -14,6 +14,7 @@ page.
 |---|---|---|
 | kerrandcompanyholdings.com | this — the entity/legal page | this repo |
 | builtbykerr.com | the services business | `kerr-and-company` |
+| kerrandcompanyholdings.com/affiliates/ | the affiliate programme page — policy from `~/ops/playbook/PLAYBOOK.md` Part 2 item 3, prices only from `~/ops/launch/dodo-facts.json` | this repo |
 
 Those are two GitHub Pages sites and therefore two repositories, because a
 Pages repo serves exactly one custom domain via its `CNAME`. That is why this
