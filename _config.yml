@@ -1,0 +1,5 @@
+# GitHub Pages builds this site with Jekyll defaults. These are working files, not pages:
+# the README and the build scripts were being served publicly (found 2026-09-25).
+exclude:
+  - README.md
+  - scripts

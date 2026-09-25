@@ -1,0 +1,15 @@
+{
+  "name": "Kerr & Company",
+  "short_name": "Kerr & Co.",
+  "description": "An independent software company in Grand Rapids, Michigan: Mac apps you buy once, and the Built by Kerr web studio.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#F6F2E9",
+  "theme_color": "#F6F2E9",
+  "icons": [
+    { "src": "/assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

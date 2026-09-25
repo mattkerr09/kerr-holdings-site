@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>Share card source</title>
+<!-- The source of /og.png, rendered at 1200x630 by scripts/make_brand_assets.py.
+     Same palette, serif and mark as the site. It carries no prices and no
+     offer: a share card is cached by every platform for weeks, and a number on
+     it would outlive the number on the page. -->
+<style>
+  html,body{margin:0}
+  body{width:1200px;height:630px;overflow:hidden;position:relative;background:#F6F2E9;color:#17130C;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .glow{position:absolute;inset:0;background:radial-gradient(520px 420px at 975px 278px,rgba(240,181,69,.30),transparent 70%)}
+  .mark{position:absolute;right:-40px;top:52px;width:452px;height:452px;color:#A8741C;
+    fill:none;stroke:currentColor;stroke-width:.7;stroke-linejoin:round}
+  .copy{position:absolute;left:80px;top:72px;width:650px}
+  .brand{display:flex;align-items:center;gap:14px;font-family:ui-serif,"Iowan Old Style",Charter,Georgia,serif;
+    font-size:30px;font-weight:600;letter-spacing:-.01em}
+  .brand svg{width:46px;height:46px;color:#A8741C;fill:none;stroke:currentColor;stroke-width:3.6;stroke-linejoin:round}
+  .eyebrow{margin:64px 0 18px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:17px;
+    letter-spacing:.14em;text-transform:uppercase;color:#7E5410;display:flex;align-items:center;gap:14px}
+  .eyebrow::before{content:"";width:34px;height:1.5px;background:currentColor}
+  h1{margin:0;font-family:ui-serif,"Iowan Old Style",Charter,Georgia,serif;font-weight:600;font-size:66px;
+    line-height:1.06;letter-spacing:-.024em}
+  .foot{position:absolute;left:80px;right:80px;bottom:56px;display:flex;justify-content:space-between;
+    align-items:flex-end;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:18px;color:#51483A;
+    letter-spacing:.02em}
+  .foot b{color:#17130C;font-weight:600}
+  .rule{position:absolute;left:80px;right:80px;bottom:104px;height:1px;background:#C9BCA2}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><!--SPRITE--></svg>
+<div class="glow"></div>
+<svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#kc-mark"/></svg>
+<div class="copy">
+  <div class="brand"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#kc-mark-sm"/></svg>Kerr &amp; Company</div>
+  <p class="eyebrow">Kerr &amp; Company LLC &middot; Grand Rapids, Michigan</p>
+  <h1>Mac apps you buy once, that run on your own machine.</h1>
+</div>
+<div class="rule"></div>
+<div class="foot"><span><b>Outlier</b> &middot; <b>Crisp Video</b> &middot; <b>Docket SEO</b> &middot; Built by Kerr</span><span>kerrandcompanyholdings.com</span></div>
+</body>
+</html>
