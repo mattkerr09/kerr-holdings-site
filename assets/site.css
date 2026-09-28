@@ -344,15 +344,28 @@ ul{margin:0}
 .foot-brand .brand{margin-bottom:.5rem}
 .foot-brand p{margin:0}
 @media (min-width:52rem){
-  .foot-grid{grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr))}
+  .foot-grid{grid-template-columns:minmax(0,2fr) repeat(2,minmax(0,1fr))}
   .foot-brand{grid-column:auto}
 }
-@media (max-width:51.99rem){.foot-col:last-child{grid-column:1/-1}}
-.foot-col h2{margin:0 0 .6rem;font-family:var(--mono);font-size:var(--fs-xs);font-weight:600;
+/* Company and Legal share a row on a phone now that there are two of them, so a
+   label that wraps to two lines needs air before the next one. */
+@media (max-width:51.99rem){.foot-col li + li{margin-top:.35rem}}
+.foot-col h2,.foot-more h2{margin:0 0 .6rem;font-family:var(--mono);font-size:var(--fs-xs);font-weight:600;
   letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
 .foot-col ul{list-style:none;padding:0}
 .foot-col a{display:inline-flex;align-items:center;min-height:2rem;text-decoration:none}
 .foot-col a:hover{color:var(--ink);text-decoration:underline}
+/* More from Kerr & Company: the cross-site block, in the same words on every
+   Kerr site, so it carries every product including AdPlaybook and Built by Kerr.
+   It replaced the Products column, which listed four of the five with no
+   description. Plain followed links; 2rem targets like the columns above. */
+.foot-more{padding-block:0 2.25rem}
+.foot-more ul{list-style:none;padding:0;display:grid;gap:.35rem 1.5rem;
+  grid-template-columns:repeat(auto-fit,minmax(12rem,1fr))}
+.foot-more li{line-height:1.45}
+.foot-more a{display:inline-flex;align-items:center;min-height:2rem;color:var(--ink);
+  font-weight:600;text-decoration:none}
+.foot-more a:hover{text-decoration:underline}
 .foot-base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 1.5rem;
   padding-block:1.25rem 2rem;border-top:1px solid var(--rule-2)}
 .foot-base a{display:inline-flex;align-items:center;min-height:1.5rem}

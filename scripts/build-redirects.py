@@ -48,6 +48,7 @@ PAGE = """<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="msvalidate.01" content="34D102FD9C044A2BDA597B176842725B" />
 <title>Moved to builtbykerr.com</title>
 <link rel="canonical" href="{new}">
 <meta http-equiv="refresh" content="0; url={new}">
