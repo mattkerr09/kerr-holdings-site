@@ -10,7 +10,7 @@ Each licence is a one-time purchase that covers up to 3 Macs, with no subscripti
 
 - [Outlier](https://outlier.host/): private, offline AI for Apple silicon Macs. Free to use with the Nano and Lite models; Pro, with every model and feature, is $249 once, or 4 × $62.25. Founding offer: $124.50, or 4 × $31.13, with code FOUNDINGOUTLIER. Requires Apple silicon, macOS 26 or later.
 - [Crisp Video](https://crispvideo.app/): offline AI video restore and 4K upscaler, with a real timeline editor. Free to use, with a small watermark; Pro is $129 once, or 4 × $32.25. Founding offer: Pro $64.50, or 4 × $16.13, with code FOUNDINGCRISP. Requires Apple silicon, macOS 26 or later.
-- [Docket SEO](https://docketseo.app/): a Mac app that audits any website with 99 checks and ranks what to fix first. Free to try: your score and how many problems each area has; the full report is $349 once, or 4 × $87.25. Founding offer: $174.50, or 4 × $43.63, with code FOUNDINGDOCKET. Requires Apple silicon, macOS 12 or later.
+- [Docket SEO](https://docketseo.app/): a Mac app that audits any website with 99 checks and ranks what to fix first. Free to try: your score and how many problems each area has; the full report is $349 once, or 4 × $87.25. Founding offer: $174.50, or 4 × $43.63, with code FOUNDINGDOCKET. Requires Apple silicon or Intel, macOS 12 or later.
 - [The apps on the company site](https://kerrandcompanyholdings.com/#products): each with a dated still of its homepage.
 
 ## Built by Kerr
