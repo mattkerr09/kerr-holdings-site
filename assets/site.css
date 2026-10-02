@@ -251,7 +251,11 @@ ul{margin:0}
 .licence-note{display:grid;gap:.5rem 2rem;margin-top:clamp(3.5rem,8vw,6rem);padding:1.5rem 1.75rem;
   border:1px solid var(--rule-2);border-radius:var(--radius);background:var(--card)}
 .licence-note p{margin:0;color:var(--ink-2)}
-@media (min-width:52rem){.licence-note{grid-template-columns:auto minmax(0,1fr);align-items:baseline}}
+/* The heading sits alone on the left and EVERY other line stays in the text column. With only grid-template-columns, a
+   third paragraph (the pay-in-four line, 0fc12e4) wrapped into the auto-sized left column, stretched it to its own width
+   and squeezed the text into a one-word strip (Matthew's screenshot, 2026-10-02). */
+@media (min-width:52rem){.licence-note{grid-template-columns:auto minmax(0,1fr);align-items:baseline}
+  .licence-note p:not(:first-child){grid-column:2}}
 
 /* ── Built by Kerr band ───────────────────────────────────────────────── */
 .band{background:var(--band);color:var(--band-ink);border-block:1px solid var(--band-rule)}
