@@ -14,7 +14,14 @@
    TYPE SCALE. Eight sizes and no others: 12, 14, 16, 17, 20, 26, 36 and the
    h1. ops/bin/type-scale-gate.py fails the homepage above 14 distinct rendered
    sizes, and the cause is always a one-off value picked to sit well beside its
-   neighbour. Use a token. */
+   neighbour. Use a token.
+
+   THE BOOKBREAKER TOUCHES (2026-10-09), borrowed from bookbreaker.bet, in
+   gold: a glow from the top of the hero, a faint drifting dot field behind it,
+   primary buttons with an inset highlight and a glow, product stills that lift
+   with a gold ring on hover, and a frosted header. CSS only; every motion stops
+   under prefers-reduced-motion. glow-top, dot-*, btn-grad, btn-glow and
+   lift-ring are decoration tokens; no text sits on them alone. */
 
 :root{
   color-scheme:light;
@@ -30,6 +37,11 @@
   --btn-bg:#17130C; --btn-ink:#FFFDF8;
   --band:#17130C; --band-ink:#F6F2E9; --band-ink-2:#C8BEAA; --band-mark:#F0B545; --band-rule:#3A3022;
   --glow:rgba(240,181,69,.20);
+  --glow-top:rgba(240,181,69,.24);
+  --dot-a:rgba(168,116,28,.3); --dot-b:rgba(168,116,28,.34); --dot-c:rgba(168,116,28,.22);
+  --btn-grad:linear-gradient(180deg,#2E271B 0%,#17130C 100%);
+  --btn-glow:0 10px 30px -12px rgba(168,116,28,.55);
+  --lift-ring:0 0 0 1px rgba(168,116,28,.16),0 30px 80px -30px rgba(168,116,28,.42);
   --shadow:0 1px 2px rgba(23,19,12,.06),0 22px 44px -24px rgba(23,19,12,.32);
   --sun:none; --moon:block;
 
@@ -60,6 +72,11 @@
     --btn-bg:#F0B545; --btn-ink:#17130C;
     --band:#1A160F; --band-ink:#F4EFE4; --band-ink-2:#BCB3A1; --band-mark:#F0B545; --band-rule:#3A3022;
     --glow:rgba(240,181,69,.10);
+    --glow-top:rgba(240,181,69,.16);
+    --dot-a:rgba(244,239,228,.7); --dot-b:rgba(240,181,69,.7); --dot-c:rgba(240,181,69,.45);
+    --btn-grad:linear-gradient(180deg,#F6C566 0%,#F0B545 55%,#E6A834 100%);
+    --btn-glow:0 10px 34px -10px rgba(240,181,69,.45);
+    --lift-ring:0 0 0 1px rgba(240,181,69,.18),0 30px 80px -30px rgba(240,181,69,.35);
     --shadow:0 1px 2px rgba(0,0,0,.5),0 22px 44px -24px rgba(0,0,0,.8);
     --sun:block; --moon:none;
   }
@@ -72,6 +89,11 @@
   --btn-bg:#F0B545; --btn-ink:#17130C;
   --band:#1A160F; --band-ink:#F4EFE4; --band-ink-2:#BCB3A1; --band-mark:#F0B545; --band-rule:#3A3022;
   --glow:rgba(240,181,69,.10);
+  --glow-top:rgba(240,181,69,.16);
+  --dot-a:rgba(244,239,228,.7); --dot-b:rgba(240,181,69,.7); --dot-c:rgba(240,181,69,.45);
+  --btn-grad:linear-gradient(180deg,#F6C566 0%,#F0B545 55%,#E6A834 100%);
+  --btn-glow:0 10px 34px -10px rgba(240,181,69,.45);
+  --lift-ring:0 0 0 1px rgba(240,181,69,.18),0 30px 80px -30px rgba(240,181,69,.35);
   --shadow:0 1px 2px rgba(0,0,0,.5),0 22px 44px -24px rgba(0,0,0,.8);
   --sun:block; --moon:none;
 }
@@ -116,10 +138,16 @@ ul{margin:0}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
   min-height:2.875rem;padding:.65rem 1.15rem;border:1px solid var(--rule-2);border-radius:8px;
   background:transparent;color:var(--ink);font-size:var(--fs-ui);font-weight:600;line-height:1.25;
-  text-decoration:none;transition:background-color .15s,border-color .15s,color .15s}
+  text-decoration:none;transition:background-color .15s,border-color .15s,color .15s,transform .15s}
 .btn:hover{border-color:var(--ink)}
-.btn-primary{background:var(--btn-bg);border-color:var(--btn-bg);color:var(--btn-ink)}
+/* The primary lights from above: a vertical gradient, a 1px inset highlight on
+   its top edge and a soft gold glow underneath. Hover stays the flat amber. */
+.btn-primary{background:var(--btn-bg);background-image:var(--btn-grad);border-color:var(--btn-bg);
+  color:var(--btn-ink);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),var(--btn-glow)}
 .btn-primary:hover{background:var(--accent-ink);border-color:var(--accent-ink);color:var(--card)}
+@media (prefers-reduced-motion:no-preference){
+  .btn-primary:hover,.btn-amber:hover{transform:translateY(-1px)}
+}
 .btn .arr{transition:transform .15s}
 .btn:hover .arr{transform:translateX(2px)}
 .actions{display:flex;flex-wrap:wrap;gap:.75rem}
@@ -135,8 +163,8 @@ ul{margin:0}
 
 /* ── header ───────────────────────────────────────────────────────────── */
 .site-header{position:sticky;top:0;z-index:30;background:var(--paper);
-  background:color-mix(in srgb,var(--paper) 88%,transparent);
-  -webkit-backdrop-filter:saturate(1.3) blur(12px);backdrop-filter:saturate(1.3) blur(12px);
+  background:color-mix(in srgb,var(--paper) 82%,transparent);
+  -webkit-backdrop-filter:saturate(1.4) blur(16px);backdrop-filter:saturate(1.4) blur(16px);
   border-bottom:1px solid var(--rule)}
 .bar{display:flex;align-items:center;gap:.5rem;min-height:4.25rem}
 .brand{display:inline-flex;align-items:center;gap:.65rem;min-height:2.75rem;margin-right:auto;
@@ -187,9 +215,26 @@ ul{margin:0}
 @media (max-width:22rem){ .brand-name{font-size:var(--fs-md)} }
 
 /* ── hero ─────────────────────────────────────────────────────────────── */
-.hero{position:relative;overflow:hidden;
+.hero{position:relative;overflow:hidden;isolation:isolate;
   padding-block:clamp(3.5rem,8vw,6.5rem) clamp(3.5rem,7vw,5.5rem);
-  background:radial-gradient(38rem 30rem at 82% 42%,var(--glow),transparent 70%)}
+  background:radial-gradient(60% 55% at 50% 0%,var(--glow-top),transparent 70%),
+             radial-gradient(38rem 30rem at 82% 42%,var(--glow),transparent 70%)}
+/* A faint field of 1px dots, three layers at different spacings, masked so it
+   fades out long before the edges, drifting over 90 seconds. Behind the copy
+   (z-index -1 inside the hero's own stacking context), never over it. */
+.hero::before{content:"";position:absolute;z-index:-1;pointer-events:none;
+  left:50%;top:-5rem;width:min(1400px,140vw);height:38rem;transform:translateX(-50%);
+  background-image:
+    radial-gradient(var(--dot-a) 1px,transparent 1.5px),
+    radial-gradient(var(--dot-b) 1px,transparent 1.5px),
+    radial-gradient(var(--dot-c) .8px,transparent 1.3px);
+  background-size:140px 140px,210px 210px,330px 330px;
+  background-position:0 0,70px 95px,160px 40px;
+  -webkit-mask-image:radial-gradient(55% 65% at 50% 35%,#000 0%,transparent 78%);
+  mask-image:radial-gradient(55% 65% at 50% 35%,#000 0%,transparent 78%);
+  opacity:.5}
+@media (prefers-reduced-motion:no-preference){.hero::before{animation:kc-drift 90s linear infinite}}
+@keyframes kc-drift{to{background-position:140px 140px,280px 305px,490px 370px}}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:2.5rem;align-items:center}
 .hero h1{max-width:17ch}
 .lead{max-width:36rem;margin:1.5rem 0 2rem;font-size:var(--fs-lg);line-height:1.55;color:var(--ink-2)}
@@ -222,7 +267,13 @@ ul{margin:0}
 }
 .shot{margin:0}
 .shot-frame{border:1px solid var(--rule-2);border-radius:var(--radius);overflow:hidden;
-  background:var(--card);box-shadow:var(--shadow)}
+  background:var(--card);box-shadow:var(--shadow);transition:transform .25s ease,box-shadow .25s ease}
+/* Pointing at a product lifts its still 2px and rings it in gold. Only where a
+   pointer can hover, so a tap on a phone does not leave it stuck up. */
+@media (hover:hover){.product:hover .shot-frame{box-shadow:var(--lift-ring),var(--shadow)}}
+@media (hover:hover) and (prefers-reduced-motion:no-preference){
+  .product:hover .shot-frame{transform:translateY(-2px)}
+}
 .shot-bar{display:flex;align-items:center;gap:.4rem;height:2.1rem;padding:0 .8rem;
   border-bottom:1px solid var(--rule);background:var(--card)}
 .shot-bar i{flex:none;width:.55rem;height:.55rem;border-radius:50%;background:var(--rule-2)}
@@ -272,7 +323,9 @@ ul{margin:0}
   border-bottom:1px solid var(--band-rule);font-family:var(--serif);font-size:var(--fs-xl);
   line-height:1.2}
 .services span{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.1em;color:var(--band-mark)}
-.btn-amber{background:var(--band-mark);border-color:var(--band-mark);color:#17130C}
+.btn-amber{background:var(--band-mark);border-color:var(--band-mark);color:#17130C;
+  background-image:linear-gradient(180deg,#F6C566 0%,#F0B545 55%,#E6A834 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 10px 34px -10px rgba(240,181,69,.45)}
 .btn-amber:hover{background:var(--band-ink);border-color:var(--band-ink);color:#17130C}
 
 /* ── affiliate call-out ───────────────────────────────────────────────── */
@@ -329,7 +382,8 @@ ul{margin:0}
 
 /* ── document pages (affiliates, 404) ─────────────────────────────────── */
 .page-head{padding-block:clamp(3rem,7vw,5rem) clamp(2rem,4vw,3rem);border-bottom:1px solid var(--rule);
-  background:radial-gradient(34rem 22rem at 90% 0%,var(--glow),transparent 70%)}
+  background:radial-gradient(60% 80% at 50% 0%,var(--glow-top),transparent 70%),
+             radial-gradient(34rem 22rem at 90% 0%,var(--glow),transparent 70%)}
 .page-head .lead{margin-bottom:0}
 .page-head .lead + .actions{margin-top:2rem}
 .doc{padding-block:clamp(2.5rem,5vw,3.5rem) clamp(4rem,8vw,6rem)}
@@ -360,7 +414,8 @@ ul{margin:0}
 .foot-col a{display:inline-flex;align-items:center;min-height:2rem;text-decoration:none}
 .foot-col a:hover{color:var(--ink);text-decoration:underline}
 /* More from Kerr & Company: the cross-site block, in the same words on every
-   Kerr site, so it carries every product including AdPlaybook and Built by Kerr.
+   Kerr site, so it carries every product including AdPlaybook, Bookbreaker and
+   Built by Kerr.
    It replaced the Products column, which listed four of the five with no
    description. Plain followed links; 2rem targets like the columns above. */
 .foot-more{padding-block:0 2.25rem}
@@ -377,6 +432,6 @@ ul{margin:0}
 .foot-base a{overflow-wrap:anywhere}
 
 @media print{
-  .offer,.site-header,.hero-art,.menu-btn,.theme-toggle{display:none}
+  .offer,.site-header,.hero-art,.hero::before,.menu-btn,.theme-toggle{display:none}
   body{background:#fff;color:#000}
 }
