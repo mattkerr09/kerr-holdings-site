@@ -8,9 +8,9 @@ Kerr & Company LLC is a Michigan limited liability company in Grand Rapids, Mich
 
 Each licence is a one-time purchase that covers up to 3 Macs, with no subscription. Prices are in US dollars. Buyers in the US can split the price into four payments, two weeks apart, with Klarna or Afterpay at checkout. For the first 25 buyers of each app, a founding code takes half off.
 
-- [Outlier](https://outlier.host/): private, offline AI for Apple silicon Macs. Free to use with the Nano and Lite models; Pro, with every model and feature, is $124.50 once, or 4 × $31.13. Founding offer, until 24 November: $62.25, or 4 × $15.57, with code FOUNDINGOUTLIER. Requires Apple silicon, macOS 26 or later.
-- [Crisp Video](https://crispvideo.app/): offline AI video restore and 4K upscaler, with a real timeline editor. Free to use, with a small watermark; Pro is $64.50 once, or 4 × $16.13, or $15 for a 7-day pass. Founding offer, until 24 November: Pro $32.25, with code FOUNDINGCRISP. Requires Apple silicon, macOS 26 or later.
-- [Docket SEO](https://docketseo.app/): a Mac app that audits any website with 99 checks and ranks what to fix first. Free to try: your score, how many problems each area has and the top problem in full; the full report is $174.50 once, or 4 × $43.63. Founding offer, until 24 November: $87.25, or 4 × $21.82, with code FOUNDINGDOCKET. Requires Apple silicon or Intel, macOS 12 or later.
+- [Outlier](https://outlier.host/): private, offline AI for Apple silicon Macs. Free to use with the Nano and Lite models; Pro, with every model and feature, is $49 once. Founding offer, until 24 November: $24.50, with code FOUNDINGOUTLIER. Requires Apple silicon, macOS 26 or later.
+- [Crisp Video](https://crispvideo.app/): offline AI video restore and 4K upscaler, with a real timeline editor. Free to use, with a small watermark; Pro is $29 once. Founding offer, until 24 November: Pro $14.50, with code FOUNDINGCRISP. Requires Apple silicon, macOS 26 or later.
+- [Docket SEO](https://docketseo.app/): a Mac app that audits any website with 99 checks and ranks what to fix first. Free to try: your score, how many problems each area has and the top problem in full; the full report is $59 once, or 4 × $14.75. Founding offer, until 24 November: $29.50, with code FOUNDINGDOCKET. Requires Apple silicon or Intel, macOS 12 or later.
 - [The apps on the company site](https://kerrandcompanyholdings.com/#products): each with a dated still of its homepage.
 
 ## Built by Kerr
