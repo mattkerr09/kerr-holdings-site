@@ -6,7 +6,7 @@ Kerr & Company LLC is a Michigan limited liability company in Grand Rapids, Mich
 
 ## The three apps
 
-Each licence is a one-time purchase that covers up to 3 Macs, with no subscription. Prices are in US dollars. Docket SEO at $59 can be split into four payments, two weeks apart, with Klarna or Afterpay at checkout in the US; Crisp and Outlier cost less than the $50 those services need. Our Black Friday sale runs all of November: everyone gets half off with the code shown for each app.
+Each licence is a one-time purchase that covers up to 3 computers at a time (Macs for Outlier; Mac or Windows for Crisp and Docket), with no subscription. Prices are in US dollars. Docket SEO at $59 can be split into four payments, two weeks apart, with Klarna or Afterpay at checkout in the US; Crisp and Outlier cost less than the $50 those services need. Our Black Friday sale runs all of November: everyone gets half off with the code shown for each app.
 
 - [Outlier](https://outlier.host/): private, offline AI for Apple silicon Macs. Free to use with the Nano and Lite models; Pro, with every model and feature, is $49 once. Black Friday price, all of November: $24.50, with code FOUNDINGOUTLIER. Requires Apple silicon, macOS 15 or later.
 - [Crisp Video](https://crispvideo.app/): offline AI video restore and 4K upscaler, with a real timeline editor, for Mac and Windows. Free to use, with a small watermark; Pro is $29 once. Black Friday price, all of November: Pro $14.50, with code FOUNDINGCRISP. Requires Apple silicon and macOS 14 or later on a Mac, or 64-bit Windows 10 or 11.
