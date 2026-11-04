@@ -1,7 +1,7 @@
 # kerrandcompanyholdings.com
 
 The company site of **Kerr & Company LLC**, a Michigan limited liability
-company in Grand Rapids. It says what the company makes (three Mac apps, sold
+company in Grand Rapids. It says what the company makes (three apps, sold
 once, and the Built by Kerr web studio), and it carries the company record: the
 section a customer, a payment processor or a regulator reads to establish who
 they are dealing with, and to reach the document that governs whichever product
@@ -13,9 +13,9 @@ they bought.
 |---|---|
 | `index.html` | the homepage: hero, the three apps, Built by Kerr, the affiliate call-out, and **Company & legal** (`#company`), which holds the record, *What it publishes*, *How purchases are processed* and *A note on the software* |
 | `affiliates/index.html` | the affiliate programme page. Policy from `~/ops/playbook/PLAYBOOK.md` Part 2 item 3, prices only from `~/ops/launch/dodo-facts.json` |
+| `privacy/index.html` | this site's own privacy page: one analytics tool (Plausible), no cookies, no forms. Linked from "Privacy (this site)" in every footer. Update it in the same commit as any change to what the site loads |
 | `404.html` | the not-found page (noindex) |
 | `assets/site.css` | the one stylesheet all three pages share |
-| `assets/*-home-2026-09-24.webp` | the product stills, captioned with the date they were shot. Re-shoot and re-date them together; never swap one without changing its caption |
 | `favicon.svg`, `scripts/og-card.html` | the sources of every icon and the share card. Edit these, then run `python3 scripts/make_brand_assets.py` |
 | `services/`, `articles/`, `case-studies/`, `legal/`, `studio.html` | redirect stubs to builtbykerr.com, written by `scripts/build-redirects.py`. Leave them alone |
 
@@ -23,8 +23,8 @@ builtbykerr.com is the services business and lives in the `kerr-and-company`
 repo. Two GitHub Pages sites need two repositories, because a Pages repo serves
 exactly one custom domain via its `CNAME`.
 
-The three pages share their offer strip, header, icon sprite and footer as
-copies, not includes: there is no build step. Change one, change all three.
+The four pages share their offer strip, header, icon sprite and footer as
+copies, not includes: there is no build step. Change one, change all four.
 
 ## Rules for this repository
 

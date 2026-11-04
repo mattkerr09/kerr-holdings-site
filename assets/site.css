@@ -258,30 +258,11 @@ ul{margin:0}
 .rule-top{border-top:1px solid var(--rule)}
 
 /* ── products ─────────────────────────────────────────────────────────── */
+/* The product cards are text only. The dated stills of each homepage showed
+   old prices and operating-system floors and were removed on 2026-11-04. */
 .product{display:grid;grid-template-columns:minmax(0,1fr);gap:1.75rem;align-items:center}
 .product + .product{margin-top:clamp(4rem,9vw,7rem)}
-@media (min-width:60rem){
-  .product{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:3.5rem}
-  .product:nth-of-type(even){grid-template-columns:minmax(0,1fr) minmax(0,1.3fr)}
-  .product:nth-of-type(even) .shot{order:2}
-}
-.shot{margin:0}
-.shot-frame{border:1px solid var(--rule-2);border-radius:var(--radius);overflow:hidden;
-  background:var(--card);box-shadow:var(--shadow);transition:transform .25s ease,box-shadow .25s ease}
-/* Pointing at a product lifts its still 2px and rings it in gold. Only where a
-   pointer can hover, so a tap on a phone does not leave it stuck up. */
-@media (hover:hover){.product:hover .shot-frame{box-shadow:var(--lift-ring),var(--shadow)}}
-@media (hover:hover) and (prefers-reduced-motion:no-preference){
-  .product:hover .shot-frame{transform:translateY(-2px)}
-}
-.shot-bar{display:flex;align-items:center;gap:.4rem;height:2.1rem;padding:0 .8rem;
-  border-bottom:1px solid var(--rule);background:var(--card)}
-.shot-bar i{flex:none;width:.55rem;height:.55rem;border-radius:50%;background:var(--rule-2)}
-.shot-url{flex:1;margin-right:1.6rem;text-align:center;font-family:var(--mono);
-  font-size:var(--fs-xs);color:var(--ink-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.shot img{width:100%;aspect-ratio:1600/1002;background:#0b0b10}
-.shot figcaption{margin-top:.8rem;font-family:var(--mono);font-size:var(--fs-xs);
-  letter-spacing:.02em;color:var(--ink-2)}
+.product-body{max-width:46rem}
 .product-no{margin:0 0 .6rem;font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.12em;
   text-transform:uppercase;color:var(--accent-ink)}
 .product h3{font-size:var(--fs-2xl)}

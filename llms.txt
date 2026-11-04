@@ -1,6 +1,6 @@
 # Kerr & Company LLC
 
-> Kerr & Company LLC is an independent software company in Grand Rapids, Michigan. It makes Outlier, Crisp Video and Docket SEO, Mac apps you buy once that run on your own machine, and runs Built by Kerr, a web studio for Grand Rapids businesses.
+> Kerr & Company LLC is an independent software company in Grand Rapids, Michigan. It makes Outlier, Crisp Video and Docket SEO, apps you buy once that run on your own machine (Outlier on Mac, Crisp and Docket on Mac and Windows), and runs Built by Kerr, a web studio for Grand Rapids businesses.
 
 Kerr & Company LLC is a Michigan limited liability company in Grand Rapids, Michigan, owned by Matthew Kerr (https://matthewkerr.dev/). It trades as Built by Kerr for its client work. Contact: matthew@kerrandcompanyholdings.com.
 
@@ -8,10 +8,10 @@ Kerr & Company LLC is a Michigan limited liability company in Grand Rapids, Mich
 
 Each licence is a one-time purchase that covers up to 3 Macs, with no subscription. Prices are in US dollars. Docket SEO at $59 can be split into four payments, two weeks apart, with Klarna or Afterpay at checkout in the US; Crisp and Outlier cost less than the $50 those services need. Our Black Friday sale runs all of November: everyone gets half off with the code shown for each app.
 
-- [Outlier](https://outlier.host/): private, offline AI for Apple silicon Macs. Free to use with the Nano and Lite models; Pro, with every model and feature, is $49 once. Black Friday price, all of November: $24.50, with code FOUNDINGOUTLIER. Requires Apple silicon, macOS 26 or later.
-- [Crisp Video](https://crispvideo.app/): offline AI video restore and 4K upscaler, with a real timeline editor. Free to use, with a small watermark; Pro is $29 once. Black Friday price, all of November: Pro $14.50, with code FOUNDINGCRISP. Requires Apple silicon, macOS 26 or later.
-- [Docket SEO](https://docketseo.app/): a Mac app that audits any website with 99 checks and ranks what to fix first. Free to try: your score, how many problems each area has and the top problem in full; the full report is $59 once, or 4 × $14.75. Black Friday price, all of November: $29.50, with code FOUNDINGDOCKET. Requires Apple silicon or Intel, macOS 12 or later.
-- [The apps on the company site](https://kerrandcompanyholdings.com/#products): each with a dated still of its homepage.
+- [Outlier](https://outlier.host/): private, offline AI for Apple silicon Macs. Free to use with the Nano and Lite models; Pro, with every model and feature, is $49 once. Black Friday price, all of November: $24.50, with code FOUNDINGOUTLIER. Requires Apple silicon, macOS 15 or later.
+- [Crisp Video](https://crispvideo.app/): offline AI video restore and 4K upscaler, with a real timeline editor, for Mac and Windows. Free to use, with a small watermark; Pro is $29 once. Black Friday price, all of November: Pro $14.50, with code FOUNDINGCRISP. Requires Apple silicon and macOS 14 or later on a Mac, or 64-bit Windows 10 or 11.
+- [Docket SEO](https://docketseo.app/): an app for Mac and Windows that audits any website with 99 checks and ranks what to fix first. Free to try: your score, how many problems each area has and the top problem in full; the full report is $59 once, or 4 × $14.75. Black Friday price, all of November: $29.50, with code FOUNDINGDOCKET. Requires Apple silicon or Intel and macOS 12 or later on a Mac, or 64-bit Windows.
+- [The apps on the company site](https://kerrandcompanyholdings.com/#products): each with its price, sale code and system requirements.
 
 ## Built by Kerr
 
@@ -27,6 +27,7 @@ Each licence is a one-time purchase that covers up to 3 Macs, with no subscripti
 - [What it publishes](https://kerrandcompanyholdings.com/#publishes): each product is governed by its own terms and privacy policy, and those documents control.
 - [How purchases are processed](https://kerrandcompanyholdings.com/#purchases): Dodo Payments is merchant of record. It takes the payment, is responsible for sales tax and VAT where it applies, and issues the licence key by email; refunds are handled through it within each product's stated window.
 - [A note on the software](https://kerrandcompanyholdings.com/#software): these products use machine-learning models that produce plausible output rather than verified fact. Review the output before you rely on it.
+- [Privacy](https://kerrandcompanyholdings.com/privacy/): this site loads one analytics tool, Plausible, which sets no cookies and stores no personal data. It has no forms.
 
 ## Product terms and policies
 
