@@ -106,7 +106,7 @@ body{margin:0;background:var(--paper);color:var(--ink);
   font:var(--fs-md)/1.6 var(--sans);-webkit-font-smoothing:antialiased}
 img,svg{display:block;max-width:100%}
 img{height:auto}
-a{color:inherit;text-decoration-thickness:1px;text-underline-offset:3px;
+a{color:inherit;overflow-wrap:anywhere;text-decoration-thickness:1px;text-underline-offset:3px;
   text-decoration-color:var(--rule-2)}
 a:hover{text-decoration-color:currentColor}
 :focus-visible{outline:2px solid var(--accent-ink);outline-offset:3px;border-radius:4px}
