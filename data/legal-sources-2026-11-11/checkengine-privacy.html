@@ -1,0 +1,262 @@
+<!-- source: https://checkengineseo.com/legal/privacy/ ; read 2026-11-11 between 2026-11-11T13:59:48Z and 2026-11-11T14:00:17Z ; title: Privacy policy: what Check Engine collects and keeps private -->
+<main id="main">
+<article><div class="wrap"><div class="crumb"><a href="/">Check Engine</a> / Privacy</div><h1>Privacy policy</h1><p class="byline">By Matt Kerr<span class="sep">·</span>Published <time datetime="2026-08-06">6 August 2026</time><span class="sep">·</span>Updated <time datetime="2026-11-10">10 November 2026</time></p>
+
+<p>Check Engine is desktop software that runs on your Mac or Windows PC. This policy covers both the application
+and this website.</p>
+<p>Check Engine for Windows is the same application and makes the same requests. Where this policy says Mac, read the Windows PC you run it on.</p>
+
+<h2>The application</h2>
+<p>Nothing about the sites you audit reaches us, Kerr &amp; Company: the crawl and the report
+stay on your computer. The requests that do leave it are listed below with who receives each one,
+and the ones that come to us are anonymous app counts, requests for the public update, price and knowledge files on this
+website and, on a copy with no licence, a question to an offer server we run. What our payment
+provider receives on our behalf is your licence key and a name for each Mac you activate it on.
+There is no account or crash reporting. The licence key is checked with our
+payment provider when you activate it and about once a day after that.</p>
+<p>An earlier version of this policy said the only network requests the app makes are to the
+website you ask it to audit, and the next one named three kinds of destination. Neither was
+accurate, and a privacy policy is the last document that should be approximately true. This is
+every request the shipped app makes, read from its code, starting with the ones it makes
+unless you switch them off.</p>
+
+<h3>What it does by default</h3>
+<ul>
+<li><strong>The licence check, to Dodo Payments.</strong> Dodo handles our checkout and issues
+the licence keys. When you activate Check Engine, the app sends Dodo your licence key and a name for
+that activation: <code>Check Engine @</code> followed by the computer's hostname: on a Mac, the network name
+macOS usually builds from the computer's name; on Windows, the computer name. After that it sends the key with that activation's
+id about once a day, when the app opens or an audit starts, and again if you deactivate. None
+of these requests carries anything about your audits, and no switch turns them off.</li>
+<li><strong>The update check, to this website.</strong> When the app opens, and every thirty
+minutes while it stays open, it asks <code><a href="https://docketseo.app/updater.json">docketseo.app/updater.json</a></code> whether a newer
+version exists; <code>Check for Updates…</code> in the Check Engine menu asks on demand. It sends
+nothing but the request for that file. If you accept an update, the new build is downloaded
+from this site's releases on GitHub, and nothing installs without you saying yes. No switch
+turns the check off.</li>
+<li><strong>The offer, to this website and to our offer server.</strong> Only on a copy with no
+licence key, and only while its activation screen is open, the app asks
+<code><a href="https://docketseo.app/offer.json">docketseo.app/offer.json</a></code> for the current price and any founding offer, and asks
+<code>kerr-lead-agent.kerrco.workers.dev</code>, a server we run, whether the founding offer is still
+open, sending only this site&rsquo;s name. That is how it avoids showing an offer that has ended.
+Nothing else is sent. With &ldquo;Keep it private&rdquo; ticked in the crawl settings it asks
+neither, and shows the list price alone. Buy opens our buy page in your browser.</li>
+<li><strong>Google PageSpeed Insights, for Core Web Vitals.</strong> The addresses of up to five
+of your shallowest pages, homepage first, each sent to Google's PageSpeed Insights API, which
+then measures that page. It works without an API key, and the desktop app never sends one.</li>
+<li><strong>DNS, for email deliverability.</strong> The mail domains of the addresses your pages
+publish, leaving out free providers such as Gmail. Check Engine looks up their mail-server (MX) and
+address records, asking your computer's own DNS servers first and Cloudflare's and Google's public
+resolvers if those do not answer. Where a domain has no MX record, it also opens a connection to
+port 25 on that domain's server to see whether anything is listening, and closes it without
+sending a message.</li>
+<li><strong>Google's autocomplete, for topic suggestions.</strong> The topic you type in
+&ldquo;What is this site about?&rdquo; or, if you leave it empty, up to three words that recur
+in the titles, headings and descriptions of at least a quarter of your pages, leaving out the
+site's own name unless nothing else recurs. Each is sent to Google's public autocomplete on its
+own and with question and buying phrases added, such as &ldquo;how to&rdquo; and
+&ldquo;cost&rdquo;. If you type nothing and no word recurs, nothing is sent.</li>
+<li><strong>This website, for the knowledge file.</strong> The knowledge refresh fetches
+<code><a href="https://docketseo.app/data/knowledge.json">docketseo.app/data/knowledge.json</a></code>: the current AI crawler list, Core Web Vitals
+thresholds and ranking notes. It is a plain request for one public file. Its user-agent says
+Check Engine, and it carries nothing about you or what you are auditing.</li>
+<li><strong>The site you asked it to audit.</strong> The crawl itself, from your machine,
+naming itself as Check Engine, and the edge-access checks, which request your homepage again as
+Check Engine and once as each of <code>Googlebot</code>, <code>OAI-SearchBot</code>, <code>GPTBot</code>, <code>ChatGPT-User</code>, <code>PerplexityBot</code>, <code>Perplexity-User</code>, <code>ClaudeBot</code>, <code>Claude-SearchBot</code>, <code>Claude-User</code> and <code>Meta-WebIndexer</code>, naming Check Engine in each, to see what your
+server tells them.</li>
+<li><strong>Other sites your pages point to.</strong> Check Engine checks that a sample of your links
+to other sites still work, and that the share images your pages name load, with a request to
+each address and a second if the first fails. It fetches the stylesheets your pages link,
+including ones served from other hosts. And it renders a small sample of your pages in
+WebKit on a Mac, or Microsoft&rsquo;s WebView2 (Chromium) on Windows,
+which runs their scripts the way a browser would, so whatever those pages
+load, such as analytics or advertising pixels, is requested too.</li>
+</ul>
+
+<h3>What turns each off</h3>
+<p>The offline switch turns off five of these together: PageSpeed Insights, the deliverability
+lookups, topic suggestions, the knowledge refresh and the edge-access checks. In the app it is
+the box labelled &ldquo;Keep it private: only contact this site&rdquo;, and on the
+command line it is <code>--offline</code>. It also keeps stylesheet fetches to the site you
+audit. It does not turn off the licence check, the update check, the link check or rendering.
+Unticking &ldquo;Also check that links to other sites still work&rdquo; in the app, or
+<code>--no-link-check</code>, turns off the link check, and rendering can be turned off only on
+the command line, with <code>--render 0</code>. There is no separate switch for each of the
+five: the offline switch is the one control. These runs ignore it, and always make the five
+checks and render pages as usual: re-audits of the sites you save, whether on their schedule,
+which runs only while Check Engine is open, or from &ldquo;Check now&rdquo;; <code>checkengine diff</code>;
+and <code>checkengine logs --url</code>.</p>
+
+<h3>What it does only when you ask</h3>
+<ul>
+<li><code>checkengine backlinks</code> and <code>checkengine attack</code> read Common Crawl's public link
+graph from commoncrawl.org. Each download reads a public file from its beginning rather than
+asking for your domain, so the request does not name the domain you are asking about.
+<code>--referring</code> streams larger files the same way, and <code>--no-authority</code>
+skips it in <code>checkengine attack</code>.</li>
+<li><code>checkengine attack --demand</code> sends the phrase you give, or one Check Engine reads off the
+site, to Google's autocomplete in the same way as topic suggestions.</li>
+<li><code>checkengine logs --verify</code> looks up each address in your log file that claims to be
+Googlebot in DNS, to confirm it is Google's.</li>
+<li><code>--psi-key</code> on the command line sends your own PageSpeed Insights key to Google
+with those requests.</li>
+<li>An AI assistant you connect with <code>checkengine mcp</code> runs audits that make the same
+requests as any other, and it can ask for offline mode.</li>
+</ul>
+<p>Audit results, your saved-site list and any crash reports are stored on your machine in
+<code>~/.docket/</code> as plain JSON files. They are never transmitted. Deleting that folder
+removes them permanently.</p>
+
+<h2>What the app tells us, anonymously</h2>
+<p>The app sends one count at each of these three moments:</p>
+<ul>
+<li><code>first_opened</code>: the first time the app is opened.</li>
+<li><code>first_audit_finished</code>: the first time an audit finishes.</li>
+<li><code>free_limit</code>: the first time the free version reaches its limit and shows the unlock.</li>
+</ul>
+<p>Each is sent once per copy and per event. Each sends only the event name, the app version
+and the kind of computer: Mac, Windows or Linux. It is a single HTTPS GET, like a page request,
+to <code>mcp.docketseo.app/app-event</code>, with a User-Agent header, no cookie and no body.</p>
+<p>These counts never send any web address or the site you audit, results or reports, your licence key,
+any ID or name, or anything from your files. Like any page request, the receiving server sees your
+internet address for the moment it answers. We store only a daily tally per event, version and system,
+never who. We do not store the internet address or User-Agent with the counts.</p>
+<p>Nothing is sent for these counts by source builds or by the engine's offline mode, and an audit run with
+&ldquo;Keep it private: only contact this site&rdquo; switched on sends no count when it finishes. The first count,
+<code>first_opened</code>, goes out the first time the app starts, before there is a chance to choose. To turn all
+three counts off, set the environment variable <code>DOCKET_NO_COUNTS=1</code>, or create an empty file named
+<code>no-counts</code> in the <code>.docket</code> folder in your home folder, before you first open the app.</p>
+
+<h2>This website</h2>
+<p>This site is static and runs four third-party scripts. The first is
+<a href="https://plausible.io/privacy-focused-web-analytics">Plausible</a>, which counts page
+views. Plausible states that it uses no cookies, collects no personal data and does not track
+visitors across sites; it is hosted in the EU. Nothing about your audits reaches it.
+Audits run on your computer and this website never sees them. Standard server logs may record IP
+addresses and requested URLs, which are used only to keep the site running.</p>
+<p>The second is the chat assistant in the corner of the page, which answers questions about
+Check Engine. Its script is loaded from <code>kerr-lead-agent.kerrco.workers.dev</code>, a server we
+run. The assistant stores nothing in your browser (no cookie of its own, no local
+storage, no session storage), and it reads nothing about your device. It draws itself in
+an isolated shadow root, so it cannot see or change the rest of the page. If you type a question
+into it, that question is sent to that server so it can be answered; if you never open it,
+nothing is sent. It knows only published facts about Check Engine, and the price it quotes comes from
+the payment provider rather than from this page, so it cannot quote you a price the checkout
+will not honour.</p>
+<p>The third is on the front page only: the founding-offer bar across the top of the
+page, loaded from <code>kerr-lead-agent.kerrco.workers.dev</code>, the same server as the
+assistant. When the page loads it asks that server whether the offer is still open, and the only
+thing it sends is this site's name. If you close the bar, the time you closed it is kept in your
+browser's local storage so the bar stays away for seven days; nothing else is stored and it sets
+no cookie. It draws itself in an isolated shadow root, like the assistant.</p>
+<p>The fourth is on every page: a small script loaded from
+<code>kerr-affiliate-hub.kerrco.workers.dev</code>, a server we run, which is where our Download and
+Buy links point. It does three things. When you click a Download or Buy link, it marks the click as made
+by a person, because a crawler that only follows the address never makes a click, so we can count people
+apart from crawlers. If you arrive through an affiliate or partner link, with an id such as
+<code>ref</code> or <code>via</code> in the address, it keeps that id in this site's local storage for
+thirty days and adds it to the Buy link, so the person who recommended Check Engine is credited if you buy; it
+sets no cookie. It also keeps the landing word, such as <code>producthunt</code>, from the same short list
+as below, in local storage for thirty days and adds it to Download and Buy links. It
+sends nothing itself. The server it points at counts downloads and Buy clicks per day, per page tag and
+country, and whether the click looked like a person; it stores no IP address and no user agent. If a
+content blocker stops the script, the links still work.</p>
+<p><strong>No advertising pixel.</strong> Until 6 November 2026 every page here also loaded Meta&rsquo;s advertising pixel, a script loaded from Facebook&rsquo;s servers, which set a cookie named <code>_fbp</code> and told Meta that a page was viewed; the thank-you page also told Meta that a purchase had completed. All of it has been removed. A browser that visited before may still hold an old <code>_fbp</code> cookie until it expires; nothing on this site sets or reads it now.</p>
+<p>Until Check Engine for Windows was released, a form for visitors on Windows was written into this site's front page, download page and pricing page. It sent an address only when one was typed and the button pressed, to <code>kerr-subscribe.kerrco.workers.dev</code>, a server we run. The form is gone. The addresses it collected are used once, to say Check Engine for Windows is ready, and for nothing else.</p>
+<p>One more thing runs here, written into this site's own pages rather than loaded from
+anywhere. If you arrive from a link that says where it was shared, such as
+<code>?ref=producthunt</code>, <code>via</code> or <code>utm_source</code>, from a fixed list of names, such as
+Product Hunt, Hacker News, Reddit, Claude, ChatGPT, a
+newsletter and the like. The page keeps that one word in your browser's session storage for this visit and
+adds it to its Download and Buy links, so we can count how many downloads came from a launch. It is
+never an affiliate id, nothing else is stored, and it is gone when you close the tab. Arrive any
+other way and it does nothing at all.</p>
+<p>These paragraphs have been rewritten three times as the answer changed. They once said the
+site &ldquo;sets no cookies&rdquo; and runs &ldquo;one third-party script&rdquo;; both were true
+until Sled was added. The line calling Sled the only thing here that can set a cookie was true
+until Meta's advertising tracker was added. The count said three until the chat assistant was added, and the description on this page still said three after the body said four. Our own audit caught that, and it was corrected to five, which is when the Windows form on the front page was counted too. It said five while the front page loaded six: the founding-offer bar was missed until a count of every script on every built page was checked against this list, and that count now runs before every deploy. It said six
+until the click-counting script was added on every page. It went back to five on 2 November 2026,
+when Sled was retired; affiliate credit is kept by the click-counting script, without a cookie. It
+went to four four days later, when Meta's advertising tracker was removed: it sent every visit
+here to Meta and set a cookie to do it. This
+paragraph is the reason that was noticed: each correction is made above rather than quietly
+deleted. A privacy page that enumerates what a site does not do is only worth reading if the
+enumeration stays complete.</p>
+<p><strong>Changed 7 November 2026.</strong> From late August 2026 until 7 November 2026, when someone bought Check Engine,
+our sales system sent Meta (Facebook) the price, the currency and a one-way coded copy of the buyer&rsquo;s email address
+(a SHA-256 hash), so that Meta could count the sale for advertising. We switched it off on 7 November, and the code that
+did it has been removed. Nothing about a purchase goes to Meta now.</p>
+<p>If you would rather not be counted, any content blocker stops it, and nothing on this site
+depends on it loading.</p>
+
+<h2>Data you give us</h2>
+<p>The <a href="/tools/">free checkers</a> send the address you type, and nothing else about you,
+to <code>ai-crawler-check.kerrco.workers.dev</code>, a server we run. Nothing is sent until you press
+the button. The AI crawler checker and the robots.txt tester make that server fetch the site's
+robots.txt. The SEO checker, the title and meta tag checker and the JSON-LD checker make it fetch
+the page at that address, read its title, meta tags, headings and structured data, and send back
+only the result of the checks, not the page. The redirect checker and the HTTP header checker make
+it follow the address hop by hop and send back each hop's address and status code and the final
+page's headers, never its cookies. The search result preview sends nothing: it runs in your
+browser.</p>
+<p>The <a href="/tools/website-checker/">free website checker</a> sends the address you type, and nothing else about
+you, to <code>site-check.kerrco.workers.dev</code>, a server we run, when you press the button. That server reads up
+to 25 pages of the site as <code>CheckEngineBot</code> (it obeys robots.txt; see <a href="/bot/">the crawler page</a>)
+and sends back only counts and example page paths, not the pages. It keeps a summary of the result for one hour so a
+repeat check is quick. To keep the limits fair it also holds daily counts of checks per visitor, per site and in
+total; the visitor count uses a one-way code made from your internet address and the date, never the address, and
+all of it is deleted when the day ends. The checker sets no cookie and stores nothing in your browser. It runs on
+Cloudflare, which hosts it.</p>
+<p>The same checks are offered to AI assistants as a connector at <code>mcp.docketseo.app</code>, run by the same
+server. When you ask an assistant such as Claude to use it, the assistant sends that server the tool's arguments: a
+page address, or for the snippet preview a title and description. Nothing else about you or the conversation is sent.
+The server fetches the page, its robots.txt or its headers, returns the result to the assistant, and keeps nothing
+about the request or the site. A public file it fetches, such as robots.txt, can sit in an edge cache for up to ten minutes, and it
+counts requests per connection for a minute and across all users per day, to stop floods; those counts hold no
+address, page or result. The server also keeps daily counts by assistant family for conversations started,
+tool calls and guide links, and by tool outcome, never an address, client name or session id. These daily counts
+are kept for thirty-five days. The connector has no account and no key. The server runs on Cloudflare, which hosts it;
+nobody else receives what an assistant sends it, apart from the site being checked, which sees an ordinary request
+for its page. There is no saved site or conversation to delete. You can stop at any time by removing the
+connector from the assistant. Questions go to <a href="mailto:support@docketseo.app">support@docketseo.app</a>.
+The server names itself in each request. The checkers set no cookie and store nothing in your browser.</p>
+<p>After a purchase, the page you return to asks <code>kerr-affiliate-hub.kerrco.workers.dev</code>,
+a server we run, what that payment came to, sending only the payment&rsquo;s id, so our own sales
+count shows what you actually paid rather than the list price. Nothing about
+you is sent or returned.</p>
+<p>The same page asks, once, how you found Check Engine. It is optional. If you tap an answer, the page sends that one
+word, such as <code>google</code>, to the same server, which adds one to a daily count for that answer and the country
+the request came from. Nothing else is sent or kept, nothing is stored in your browser, and nothing is sent if you
+do not tap.</p>
+
+<p>The planned email boxes on the AI assistants page and the download page are switched off. Neither page shows a box or sends an address. When enabled, until 30 November 2026 the box offers a confirmation email and one reminder the day
+before the launch price ends, on the price-reminder list. From 1 December it offers news
+about new checks about once a month, on the separate news list. Asking for a reminder
+does not sign you up for news.</p>
+<p>Nothing is sent unless you type an address and press the button. Then the address and the name of the list
+go to <code>kerr-subscribe.kerrco.workers.dev</code>, a server we run. It keeps the address, the list name,
+the site name and the date, and nothing about your device. We will switch the boxes on only when the email service can send a confirmation first. Until then they collect nothing. The reminder list is deleted on
+1 December 2026. To be removed sooner, use the unsubscribe link or <a href="/contact/">ask</a>, and the row
+is deleted. News addresses are kept until you unsubscribe.</p>
+<p>Until 8 November 2026 this section said the home page had one email field;
+by then no page had one.</p>
+
+<p>This section said &ldquo;there is no contact form and no mailing list&rdquo; until
+2026-08-24. The field went live on 2026-08-18, so the denial stood for six days while addresses
+were being collected. It is corrected here rather than quietly rewritten, for the reason given
+two paragraphs above: an enumeration of what a site does not do is worth nothing unless it is
+kept complete, and this is the enumeration failing.</p>
+<p>If you open an issue on GitHub, that issue is public and GitHub's privacy policy applies to
+it; we hold nothing separately.</p>
+
+<h2>The Chrome extension</h2>
+<p>Check Engine page check, the free Chrome extension, has its own short page: <a href="/legal/chrome-extension/">what it reads and what it sends</a>. It sends nothing to us.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes, the updated version appears on this page.</p>
+
+<h2>Contact</h2>
+<p>Questions about privacy or anything else: <a href="/contact/">get in touch</a>.</p>
+
+</div></article>
+</main>

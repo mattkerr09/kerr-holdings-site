@@ -1,0 +1,148 @@
+<!-- source: https://outlier.host/privacy.html ; read 2026-11-11 between 2026-11-11T13:59:48Z and 2026-11-11T14:00:17Z ; title: Privacy Policy — Outlier, local AI for Mac -->
+<body>
+  <div class="wrap">
+    <a class="back" href="/">← Back to Outlier</a>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: 2026-11-09 · Kerr &amp; Company LLC, Grand Rapids, MI</p>
+    <p class="updated">Changed 2026-11-07: on 7 November 2026 we found that Cloudflare, which serves this site, was also adding its own cookieless Web Analytics script to every page. It is off: on 9 November we checked the pages from a browser and none of them loads it any more. Plausible is our only analytics.</p>
+    <p class="updated">Changed 2026-11-07: added &ldquo;Will It Run (mcp.outlier.host)&rdquo;, the read-only helper that Claude, ChatGPT and other AI assistants can use to check whether a model fits a Mac. Nothing in the app changed.</p>
+    <p class="updated">Changed 2026-11-07: from 24 August to 7 November 2026, when someone bought Outlier, our sales system sent Meta (Facebook) the price and a one-way coded copy of the buyer&rsquo;s email address (a SHA-256 hash), so Meta could count the sale for ads. We switched it off on 7 November. Nothing about a purchase goes to Meta now.</p>
+    <p class="updated">Changed 2026-11-08: added the &ldquo;Ask a question&rdquo; box on this site to the list above. It was always answered by a cloud model; the list did not say so, and the box itself now does too. Changed 2026-11-07: two headings said more than the list under them. &ldquo;What never leaves your Mac&rdquo; listed your prompts and your license key, but a chat you switch to a cloud model goes to that provider, and the license key goes to its vendor at activation and in the daily re-check. &ldquo;Only when you opt in&rdquo; was also wrong for the update check, the license re-check and the upgrade-window price check, which run on their own. The headings and those two lines now say exactly that. Nothing the app does changed.</p>
+    <p class="updated">Changed 2026-11-06: removed Meta's (Facebook's) tracking pixel from every page of this site, and with it the cookie it set. Plausible, which sets no cookies, is the only analytics here.</p>
+    <p class="updated">Changed 2026-11-04: the model download line now says which tiers come from Outlier's own Hugging Face repositories and which from public mlx-community repositories, instead of saying every tier comes from Outlier-Ai.</p>
+    <p class="updated">Changed 2026-11-04: the price check now says it asks whether the sale is on, and a paragraph about checkout payment options that do not apply at these prices is gone.</p>
+    <p class="updated">Changed 2026-11-04: the sale banner script loads on every page, not only the home page; the list of scripts below now says so. The assistant widget is the one script that is home-page only.</p>
+    <p class="updated">Changed 2026-11-02: removed Sled, the affiliate-attribution script, and the cookie it could set.</p>
+    <p class="updated">Changed 2026-10-31: added how agent commands behave when web is off (they ask before reaching the internet).</p>
+    <p class="dim">2026-09-29: the list of what leaves your Mac was incomplete. Added three things the app already did: the price check when you open an upgrade window, the daily license re-check, and the services you connect yourself (an MCP server, a Google Custom Search key, a Gist import). None of them is new.</p>
+
+    <p>Outlier is a Mac-native local AI app. The privacy story is short because the design choice is to keep things on your Mac unless you opt in.</p>
+
+    <h2>What stays on your Mac</h2>
+    <ul>
+      <li>Your prompts, chat history, memory, personas, projects, and uploaded files, as long as you use Outlier&rsquo;s local models. If you switch a chat to a cloud model with your own API key, that chat goes to the provider you chose (see below).</li>
+      <li>Anything Outlier's local models generate. Inference runs on Apple Silicon via MLX, on-device.</li>
+      <li>Your license key is stored at <code>~/.outlier/license.json</code> with 0600 perms. It goes to one place only, the vendor that issued it: when you activate, and in the re-check at startup and once a day (see below).</li>
+      <li>Bug reports created via Help &amp; Diagnostics. Saved to <code>~/.outlier/bug_reports/</code> locally. You decide whether to email them.</li>
+    </ul>
+
+    <h2>What can leave your Mac</h2>
+    <p>Three checks run on their own: the app update check, the license re-check, and the price check when you open an upgrade window. Each is described below, with exactly what it sends. Everything else on this list happens only when you use that feature.</p>
+    <ul>
+      <li><strong>The &ldquo;Ask a question&rdquo; box on this site, if you type into it:</strong> a cloud AI model answers it (Llama 3.3 70B, run on Cloudflare Workers AI), working from the page&rsquo;s published prices and terms. Your question goes to Cloudflare to be answered; our worker keeps no copy of it. The box belongs to the website: the desktop app has no such box and never sends your chats there.</li>
+      <li><strong>The mailing list, if you type an address into a form on outlier.host</strong>: most
+      pages here carry a &ldquo;new models worth running&rdquo; form. It sends nothing on page load; it posts once, when you
+      press the button. What is stored is the address you typed and which of our sites you sent it from, on our own Cloudflare
+      Worker and D1 database at <code>kerr-subscribe.kerrco.workers.dev</code>: not a marketing SaaS, because
+      dropping one of those onto a site that sells &ldquo;nothing leaves your machine&rdquo; would make the claim false in
+      order to collect an email address. <strong>No IP address, no user agent, no referer, no fingerprint.</strong> That
+      is a statement about the code: the insert binds the address and the source and nothing else, and the worker reads no
+      client header beyond the ones a browser needs to make the request at all. Consent is per site, not per page: every form on outlier.host records the same source, so subscribing
+      from two of our pages is one entry and one email, while the same
+      address given on another of our products is a separate row, and leaving one does not leave the other.
+      Every email carries a one-click unsubscribe. The desktop app never sends this; there is no mailing-list code in the
+      app at all.</li>
+      <li><strong>Model downloads from HuggingFace</strong>: when you activate a tier for the first time, the weights download from HuggingFace: Nano, Lite, Quick and Core from <a href="https://huggingface.co/Outlier-Ai" target="_blank" rel="noopener noreferrer">huggingface.co/Outlier-Ai</a>, Outlier's own repositories, and Plus and Vision 3.8 from public mlx-community repositories (community conversions of Qwen's models). HuggingFace sees your IP and which repo you fetched. No prompts, no chats, no model output is sent. After the download, the model runs locally forever.</li>
+      <li><strong>Cloud API providers (OpenAI / Anthropic / OpenAI-compatible)</strong>: only when you explicitly switch to a cloud model in the picker AND provide your own API key. Your prompts and conversation history are sent to that provider per their terms. Your API key is stored locally; we never see it.</li>
+      <li><strong>Anything you connect yourself</strong>: an MCP server, a Google Custom Search key, a chat you import from a Gist link: each one receives the requests that feature makes. None of them is set up by default.</li>
+      <li><strong>Agent commands with web off</strong>: the agent has no web search, web pages or web-connected tools, and a command that downloads or installs from the internet asks you first, every time; if you approve it, it can reach the internet and nothing else on your Mac.</li>
+      <li><strong>Web search</strong>: only when you toggle 🌐 search on for a turn. Sends your search query (not your full prompt history) to DuckDuckGo, Mojeek, and Wikipedia (and, during Deep Research only, additionally Crossref, OpenAlex, StackExchange, and Hacker News / Algolia). Results are then fed back into the local model.</li>
+      <li><strong>App update check</strong>: Outlier periodically polls <a href="https://github.com/Outlier-host/outlier-app-releases/releases/latest/download/latest.json" target="_blank" rel="noopener noreferrer">a public GitHub URL</a> for new release metadata. HTTP GET only. Update payloads are cryptographically signed (minisign) and verified before install.</li>
+      <li><strong>The price in an upgrade window</strong>: when you open a window that offers Pro, the app asks <code>kerr-lead-agent.kerrco.workers.dev</code> whether the sale is on, so it can show the right price. The request names the site and nothing else: no license key, no device id, nothing you typed. It is never sent on a timer.</li>
+      <li><strong>Founders / Pro license activation</strong>: when you paste your license key into Settings &rarr; license, the key is sent to the vendor that issued it: <code>live.dodopayments.com</code> for keys bought now, or <code>api.polar.sh</code> for keys bought before 23 August 2026. The app decides from the key itself and sends it to one vendor only, along with a device name so the seat can be counted against your three activations. After that the app re-checks the key with the same vendor at startup and once a day; if the vendor can't be reached, Pro keeps working.</li>
+    </ul>
+    <p class="dim">The in-app Privacy Ledger (Settings → Privacy → Privacy ledger) lists the app&rsquo;s built-in destinations, the license check and the upgrade-window price check included (from version 1.11.866). It is kept by hand from the app&rsquo;s own network calls, and a test checks it against the hosts the app&rsquo;s code actually contacts.</p>
+
+    <h2>What Outlier does NOT do</h2>
+    <ul>
+      <li>No inference telemetry. We do not log your prompts, model outputs, or which questions you ask.</li>
+      <li>No analytics SDK in the desktop app. (The marketing site at outlier.host runs scripts from other hosts, and this is the whole list: Plausible, which sets no cookies and stores no IP addresses; our own affiliate-referral script, served from a Kerr &amp; Company worker, which only reads a partner code off the link you arrived by; our own mailing-list form script, from the same kind of worker, which sends nothing unless you type an address into a form (described above); our own sale banner script, from a Kerr &amp; Company worker, on every page: it checks whether the sale is still on and remembers in your browser's local storage (key <code>kc-founding-dismissed</code>) that you closed it; and, on the home page only, our own assistant widget, from the same worker, which sends only the messages you type into it; and, added by Cloudflare (which serves this site) rather than by us, Cloudflare&rsquo;s cookieless Web Analytics script, which was on until 9 November 2026 and is now off. None of them are in the app. <!-- Counted and rewritten 2026-09-21: this said "four scripts" while 254 pages loaded the mailing-list script and the home page loaded two more; a list that says it is complete has to be. --></li>
+      <!-- Added 2026-08-13. This page listed Plausible as the only thing the marketing site
+           touched, which read as a complete list and was not one: outlier.host loads its four
+           typefaces from Google Fonts and Fontshare, and loading a font is an HTTP request that
+           hands those companies your IP address. Nothing here is sent by the app and no prompt
+           or file is involved — but "nothing leaves your machine" is this product's entire
+           argument, and a page that enumerates what it does NOT do has to be complete or the
+           enumeration is the misleading part. kerrandcompanyholdings.com already discloses its
+           Google Fonts request in exactly these terms; this brings outlier.host in line. -->
+      <!-- Added 2026-08-14, for the same reason as the note above. The site now loads
+           Sled, which credits the right person when somebody recommends Outlier. It is
+           the first thing here that can set a cookie, so the line above no longer says
+           Plausible is used "only", and this gets its own entry rather than a
+           parenthesis. The distinction that matters is that it is CONDITIONAL: arrive
+           through an affiliate link and it sets one ta_ref cookie; arrive from a search
+           result, a bookmark or a link of ours and it sets nothing at all, which is what
+           almost every visitor does. It records which affiliate sent a visit, never who
+           the visitor is. "One cookie, sometimes" is the only honest version — "no
+           cookies" would now be false and "we use cookies" would overstate it. -->
+      <!-- 2026-11-02: Sled retired (Matthew). Its script is off every page, so its conditional ta_ref cookie is gone. -->
+      <!-- 2026-11-06: Meta's tracking pixel was removed from every page (Matthew: "Remove it"), and the cookie it set with it. -->
+      <li>Cookies. No tracking cookie is set on this site: Plausible counts visits without cookies,
+      and Meta's (Facebook's) tracking pixel, which used to set a cookie, was removed on
+      2026-11-06. The referral code and the sale-banner choice described here are kept in your
+      browser's local storage, not in cookies.</li>
+      <!-- Rewritten 2026-08-18, when the fonts became first-party. The previous
+           version of this paragraph was accurate and that was the problem: it
+           correctly disclosed that reading this page exposed your IP to Google
+           and Fontshare, on a site whose headline is that nothing leaves your
+           Mac. An honest disclosure of a contradiction is still a
+           contradiction. -->
+      <!-- Added 2026-09-21 with the affiliate-referral script. This one is not a cookie (Sled's
+           was, until it was retired on 2026-11-02). -->
+      <li>Affiliate referrals. If you arrive from an affiliate or partner link, the link's
+      referral code is kept in your browser's local storage on this site (key
+      <code>kc_aff</code>) for 30 days and is attached to the checkout link if you buy, so the
+      partner who referred you is credited. This is first-party: it is stored only by this
+      site, is not a cookie, is not sent to any third party by this site, and is not read by
+      any other site. Dodo Payments, the checkout, receives the code as order metadata only
+      when you buy. Clearing your browser's site data removes it.</li>
+      <li>No third-party assets on this site except the scripts listed above.
+      <strong>The typefaces are served from outlier.host itself.</strong> They used to be
+      requested from Google Fonts (<code>fonts.googleapis.com</code>, <code>fonts.gstatic.com</code>)
+      and Fontshare (<code>api.fontshare.com</code>), which meant simply opening this page
+      exposed your IP address to three servers we do not control. It no longer does: the font
+      files are in this site's own repository and are downloaded from the same host as the page.
+      The desktop app never requested them either, the shipping bundle contains no reference to
+      any of those hosts.</li>
+      <li>No account required to use Free Nano + Lite or BYOK cloud.</li>
+      <li>No automatic crash reporting. Crash logs are saved locally to <code>~/.outlier/crashes/</code>. You decide whether to email them via the Bug Report flow.</li>
+      <li>No reading your filesystem outside what you explicitly mount as a Project, attach as a file, or grant via macOS file/screen permissions.</li>
+    </ul>
+
+    <h2 id="will-it-run">Will It Run (mcp.outlier.host)</h2>
+    <p>Will It Run is a separate, read-only service that AI assistants such as Claude and ChatGPT can use to check whether an AI model fits a Mac. You add it to your assistant yourself. It is not part of the Outlier app, and the app never contacts it.</p>
+    <p><strong>What it receives.</strong> When your assistant uses one of its tools, it sends that tool&rsquo;s inputs: a Mac name (for example &ldquo;MacBook Air M2&rdquo;), a memory size in GB, one or more model names, a task (chat, coding, vision or anything) and, if you asked for one, a minimum speed. It never receives your conversation, your account details or anything on your Mac. Some assistants may also attach hints, such as your language or a rough location; the service ignores them. Like any web request, each one also arrives with the network address and software name of the computer that sent it, which is usually your assistant&rsquo;s own server, not yours. The service does not read them.</p>
+    <p><strong>What it does with them.</strong> It looks the answer up in tables built into the service (Apple&rsquo;s published Mac specifications and our own speed measurements) and sends the answer back. It makes no other requests and contacts no one else.</p>
+    <p><strong>What is kept.</strong> The service keeps nothing: no database, no log of questions or answers, no cookies. Cloudflare, which runs it, keeps its own traffic and security records for every site it serves, under <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare&rsquo;s privacy policy</a>. We use what Cloudflare shows us only to keep the service running.</p>
+    <p><strong>Who else sees it.</strong> Nobody. We don&rsquo;t sell or share the inputs, and we don&rsquo;t use them for ads or to train anything. Your assistant sees your question and our answer under its own privacy policy.</p>
+    <p><strong>Your choices.</strong> There is nothing of yours to delete. To stop, remove Will It Run from your assistant&rsquo;s connectors. Questions: matt@outlier.host.</p>
+
+    <h2>Payments</h2>
+      <p>Paid tiers (Pro, the Outlier Lifetime Licence $49) are processed by <a href="https://dodopayments.com" target="_blank" rel="noopener noreferrer">Dodo Payments</a>, which handles payment, licence issuance and the customer portal. Purchases made before 23 August 2026 were processed by <a href="https://polar.sh" target="_blank" rel="noopener noreferrer">Polar</a> and those licences remain valid. We never see your card details.</p>
+
+    <h2>Children</h2>
+    <p>Outlier is not directed at children under 13.</p>
+
+    <h2>Changes</h2>
+    <p>If we change this policy materially, we will note the change at the top of this page and bump the "Last updated" date. We won't make a change that suddenly enables cloud telemetry on existing installs.</p>
+
+    <h2>Contact</h2>
+    <p>Questions: <a href="mailto:matt@outlier.host">matt@outlier.host</a></p>
+
+    <hr>
+    <p class="dim">This policy is plain English. If a lawyer reading it tells you something is missing, email and I'll add it.</p>
+    <div class="cta">
+      <h3>Try Outlier free</h3>
+      <p>Free: Nano + Lite. Pro<span data-pbox-regular>: $49 once</span><span data-pbox-founding hidden> at the launch price: $24.50 once, through November 30. From December 1: $49</span>. macOS 15+. Refund window: 30 days, no questions asked. Priced in US dollars. Checkout shows your currency and any local tax.</p>
+      <a class="btn" href="https://outlier.host/dl/outlier?src=privacy&amp;to=https://github.com/Outlier-host/outlier-app-releases/releases/download/v1.11.1006/Outlier-1.11.1006-arm64.dmg" rel="nofollow">Download free (277 MB)</a> <a class="btn ghost" href="https://outlier.host/buy/outlier?src=privacy-end" rel="nofollow">Buy Pro</a>
+      <p class="phone-link">On your phone? <button type="button" data-send-mac-link>Send the Mac link to yourself</button></p>
+    </div>
+  </div>
+<div data-founding data-was="$49" data-now="$24.50" hidden></div>
+
+
+
+<div class="foot"><p>Made by <a href="https://kerrandcompanyholdings.com/">Kerr &amp; Company</a></p></div>
+
+
+</body>
