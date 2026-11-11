@@ -28,7 +28,9 @@ OLD_URL = "https://" + "doc" + "ketseo.app/"
 NEW_URL = "https://checkengineseo.com/"
 ALLOWED = (
     "index.html", "about/index.html", "privacy/index.html", "affiliates/index.html",
-    "post-desk/index.html", "terms/index.html", "404.html", "llms.txt",
+    "post-desk/index.html", "terms/index.html",
+    # 11 Nov review: _config.yml serves .well-known and keeps data/ out (Article Studio, reviewed by hand).
+    "_config.yml", "404.html", "llms.txt",
     "legal/index.html", "legal/site-terms/index.html", "legal/terms.html",
     "legal/privacy.html", "security/index.html", ".well-known/security.txt",
     "scripts/build-redirects.py", "scripts/legal_mirror.py",
