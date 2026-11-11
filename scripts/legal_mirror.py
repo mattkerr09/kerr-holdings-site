@@ -25,7 +25,7 @@ PRODUCTS = {
 }
 KERR_DOMAINS = {
     "crispvideo.app", "outlier.host", "checkengineseo.com", "docketseo.app",
-    "kerrandcompanyholdings.com", "builtbykerr.com", "matthewkerr.dev",
+    "builtbykerr.com", "matthewkerr.dev",
     "adplaybook.app", "kerrco.workers.dev",
 }
 VOID = set("area base br col embed hr img input link meta param source track wbr".split())
@@ -98,6 +98,13 @@ def link_attrs(attrs, base):
         href = attrs["href"]
         if urlsplit(href).scheme.lower() != "mailto":
             attrs["href"] = urljoin(base, href)
+        if urlsplit(attrs["href"]).hostname == urlsplit(SITE).hostname:
+            rel = [token for token in attrs.get("rel", "").split()
+                   if token.lower() != "nofollow"]
+            if rel:
+                attrs["rel"] = " ".join(rel)
+            else:
+                attrs.pop("rel", None)
         if is_kerr_link(attrs["href"], base):
             rel = attrs.get("rel", "").split()
             if "nofollow" not in rel:
@@ -212,21 +219,6 @@ INDEX_LINES = (
 )
 
 
-def shell_links(html):
-    # Keep the existing shell byte for byte apart from anchor rel attributes.
-    def replace(match):
-        tree = Tree(match.group()).root
-        anchor = tree.children[0]
-        attrs = dict(anchor.attrs)
-        if is_kerr_link(attrs.get("href", ""), SITE):
-            rel = attrs.get("rel", "").split()
-            if "nofollow" not in rel:
-                rel.append("nofollow")
-            attrs["rel"] = " ".join(rel)
-        return "<a" + attributes(attrs) + ">"
-    return re.sub(r"<a\b[^>]*>", replace, html)
-
-
 def page(title, description, route, intro, content, noindex=False):
     shell = (ROOT / "privacy/index.html").read_text(encoding="utf-8")
     before, rest = shell.split('<main id="main">', 1)
@@ -262,7 +254,6 @@ def page(title, description, route, intro, content, noindex=False):
     }
     before = re.sub(r'(<script type="application/ld\+json">).*?(</script>)',
                     lambda m: m[1] + json.dumps(schema, separators=(",", ":")) + m[2], before)
-    after = after.replace("Privacy (this site)", "Site privacy")
     main = f'''<main id="main">
 <section class="page-head">
   <div class="wrap">
@@ -276,12 +267,12 @@ def page(title, description, route, intro, content, noindex=False):
 {content}
 </div>
 </main>'''
-    return shell_links(before) + main + shell_links(after)
+    return before + main + after
 
 
 def build_pages():
     content = "<ul>\n" + "\n".join(
-        f'  <li><a href="{route}" rel="nofollow">{escape(label)}</a>: {escape(line, quote=False)}</li>'
+        f'  <li><a href="{route}">{escape(label)}</a>: {escape(line, quote=False)}</li>'
         for route, label, line in INDEX_LINES
     ) + "\n</ul>"
     pages = {"legal/index.html": page(

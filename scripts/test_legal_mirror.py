@@ -2,6 +2,7 @@
 """Offline checks with a streaming text oracle independent of the builder tree."""
 
 import difflib
+from collections import Counter
 from contextlib import redirect_stderr
 import hashlib
 from html.parser import HTMLParser
@@ -35,10 +36,10 @@ HASHES = {
     "outlier-terms.html": "caea72ef8361baea109d26343dc707acfda96cc2c718d2bb87a2f1a4a28bfaca",
     "read-at.txt": "5896384a4043850987a238f917e5ef44a602273c894052bf340295428326ab7e",
 }
-# Independent domain list: also covers the company shell and Kerr's worker hosts.
+# Independent domain list: other Kerr sites and worker hosts require nofollow.
 DOMAINS = {
     "crispvideo.app", "outlier.host", "checkengineseo.com", "docketseo.app",
-    "kerrandcompanyholdings.com", "matthewkerr.dev", "builtbykerr.com",
+    "matthewkerr.dev", "builtbykerr.com",
     "adplaybook.app", "kerrco.workers.dev",
 }
 SOURCE_FILES = {
@@ -186,16 +187,32 @@ class LegalMirrors(unittest.TestCase):
                 self.assertIn("Payment + refunds", Audit(html, filename="outlier-terms.html").text)
 
     def test_pages_links_metadata_and_authored_copy(self):
+        def shell_anchors(html):
+            before, rest = html.split('<main id="main">', 1)
+            _, after = rest.split('</main>', 1)
+            # Legal pages already omit the offer bar, outside the header and menu.
+            before = re.sub(r'<div class="offer">.*?</div>\n', "", before)
+            return re.findall(r'<a\b[^>]*>.*?</a>', before + after, flags=re.S)
+
+        shell = (ROOT / "privacy/index.html").read_text(encoding="utf-8")
         for slug in [None, *SOURCE_FILES]:
             route = "/legal/" + (slug + "/" if slug else "")
             html = (ROOT / (route.strip("/") + "/index.html")).read_text(encoding="utf-8")
             audit = Audit(html)
-            count = 0
+            pairs = Counter()
             for link in audit.links:
+                url = urlsplit(urljoin(mirror.SITE + route, link["href"]))
+                host = (url.hostname or url.scheme).lower().rstrip(".")
+                nofollow = "nofollow" in link.get("rel", "").lower().split()
+                pairs[host, nofollow] += 1
+                if host == "kerrandcompanyholdings.com":
+                    self.assertFalse(nofollow, (route, link))
                 if is_kerr(link["href"]):
-                    self.assertIn("nofollow", link.get("rel", "").split(), (route, link))
-                    count += 1
-            print(f"{route} nofollow Kerr links: {count}")
+                    self.assertTrue(nofollow, (route, link))
+            print(f"{route} link pairs (host, nofollow):")
+            for (host, nofollow), count in sorted(pairs.items()):
+                print(f"  ({host}, {nofollow}): {count}")
+            self.assertEqual(shell_anchors(html), shell_anchors(shell), route)
             robots = re.findall(r'<meta name="robots" content="([^"]+)">', html)
             self.assertEqual(robots, ["noindex, follow" if slug else "index,follow"])
             self.assertIn(f'<link rel="canonical" href="{mirror.SITE + route}">', html)
@@ -275,6 +292,20 @@ class LegalMirrors(unittest.TestCase):
         for a in Audit(html).links:
             self.assertEqual("nofollow" in a.get("rel", "").split(), is_kerr(a["href"]))
         self.assertNotRegex(html, r"<(script|form|button|img)\b")
+
+    def test_company_links_and_other_rel_tokens(self):
+        for href in ["/privacy/", "#main", "https://kerrandcompanyholdings.com/legal/"]:
+            with self.subTest(href=href):
+                attrs = mirror.link_attrs({"href": href, "rel": "noopener nofollow"}, mirror.SITE)
+                self.assertEqual(attrs["rel"], "noopener")
+                attrs = mirror.link_attrs({"href": href, "rel": "nofollow"}, mirror.SITE)
+                self.assertNotIn("rel", attrs)
+        for host in sorted(DOMAINS):
+            attrs = mirror.link_attrs({"href": f"https://{host}/", "rel": "noopener"}, mirror.SITE)
+            self.assertEqual(attrs["rel"], "noopener nofollow")
+        for host in ["dodopayments.com", "polar.sh", "cloudflare.com"]:
+            attrs = {"href": f"https://{host}/", "rel": "noopener"}
+            self.assertEqual(mirror.link_attrs(attrs, mirror.SITE), attrs)
 
     def test_check_and_drift_detection(self):
         result = subprocess.run([sys.executable, str(ROOT / "scripts/legal_mirror.py"), "--check"],
