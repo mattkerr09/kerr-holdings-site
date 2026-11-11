@@ -210,7 +210,9 @@ def mirror_body(slug):
 
 
 INDEX_LINES = (
+    ("/legal/site-terms/", "Site terms", "Terms for using this company website."),
     ("/privacy/", "Site privacy", "What the company website collects and who sees it."),
+    ("/security/", "Security", "How to report a security problem with our websites or apps."),
     ("/terms/", "Post Desk terms", "Terms for using Post Desk."),
     ("/about/", "Company details", "Who Kerr & Company LLC is and how to contact us."),
     ("/legal/crisp/", "Crisp legal mirror", "Crisp's terms, privacy policy and refund policy."),

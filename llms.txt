@@ -1,16 +1,16 @@
 # Kerr & Company LLC
 
-> Kerr & Company LLC is an independent software company in Grand Rapids, Michigan. It makes Outlier, Crisp Video and Docket SEO, apps you buy once that run on your own machine (Outlier on Mac, Crisp and Docket on Mac and Windows), and runs Built by Kerr, a web studio for Grand Rapids businesses.
+> Kerr & Company LLC is an independent software company in Grand Rapids, Michigan. It makes Outlier, Crisp Video and Check Engine SEO, apps you buy once that run on your own machine (Outlier on Mac, Crisp and Check Engine on Mac and Windows), and runs Built by Kerr, a web studio for Grand Rapids businesses.
 
 Kerr & Company LLC is a Michigan limited liability company in Grand Rapids, Michigan, owned by Matthew Kerr (https://matthewkerr.dev/). It trades as Built by Kerr for its client work. Contact: matthew@kerrandcompanyholdings.com.
 
 ## The three apps
 
-Each licence is a one-time purchase that covers up to 3 computers at a time (Macs for Outlier; Mac or Windows for Crisp and Docket), with no subscription. Prices are in US dollars. Docket SEO at $59 can be split into four payments, two weeks apart, with Klarna or Afterpay at checkout in the US; Crisp and Outlier cost less than the $50 those services need. Launch prices run through November 30, with the code shown for each app; from December 1 the regular prices apply.
+Each licence is a one-time purchase that covers up to 3 computers at a time (Macs for Outlier; Mac or Windows for Crisp and Check Engine), with no subscription. Prices are in US dollars. Check Engine SEO at $59 can be split into four payments, two weeks apart, with Klarna or Afterpay at checkout in the US; Crisp and Outlier cost less than the $50 those services need. Launch prices run through November 30, with the code shown for each app; from December 1 the regular prices apply.
 
 - [Outlier](https://outlier.host/): private, offline AI for Apple silicon Macs. Free to use with the Nano and Lite models; Pro, with every model and feature, is $49 once. Launch price: $24.50 once, through November 30. From December 1: $49. Get it with code FOUNDINGOUTLIER. Requires Apple silicon, macOS 15 or later.
 - [Crisp Video](https://crispvideo.app/): offline AI video restore and 4K upscaler, with a real timeline editor, for Mac and Windows. Free to use, with a small watermark; Pro is $29 once. Launch price: $14.50 once, through November 30. From December 1: $29. Get it with code FOUNDINGCRISP. Requires Apple silicon and macOS 14 or later on a Mac, or 64-bit Windows 10 or 11.
-- [Docket SEO](https://docketseo.app/): an app for Mac and Windows that audits any website with 99 checks and ranks what to fix first. Free to try: your score, how many problems each area has and the top problem in full; the full report is $59 once, or 4 × $14.75. Launch price: $29.50 once, through November 30. From December 1: $59. Get it with code FOUNDINGDOCKET. Requires Apple silicon or Intel and macOS 12 or later on a Mac, or 64-bit Windows.
+- [Check Engine SEO](https://checkengineseo.com/): an app for Mac and Windows that audits any website with 99 checks and ranks what to fix first. Free to try: your score, how many problems each area has and the top problem in full; the full report is $59 once, or 4 × $14.75. Launch price: $29.50 once, through November 30. From December 1: $59. Get it with code FOUNDINGDOCKET. Requires Apple silicon or Intel and macOS 12 or later on a Mac, or 64-bit Windows.
 - [The apps on the company site](https://kerrandcompanyholdings.com/#products): each with its price, launch code and system requirements.
 
 ## Built by Kerr
@@ -19,7 +19,7 @@ Each licence is a one-time purchase that covers up to 3 computers at a time (Mac
 
 ## Affiliate programme
 
-- [Affiliate programme](https://kerrandcompanyholdings.com/affiliates/): recommend Crisp, Docket SEO, AdPlaybook or Outlier with a personal code the buyer enters at checkout. 50% of each sale, 60% from the eleventh sale onward, payable 30 days after the sale and paid once a month by bank transfer. Apply at hello@kerrandcompanyholdings.com.
+- [Affiliate programme](https://kerrandcompanyholdings.com/affiliates/): recommend Crisp, Check Engine SEO, AdPlaybook or Outlier with a personal code the buyer enters at checkout. 50% of each sale, 60% from the eleventh sale onward, payable 30 days after the sale and paid once a month by bank transfer. Apply at hello@kerrandcompanyholdings.com.
 
 ## Company record
 
@@ -34,9 +34,9 @@ Each licence is a one-time purchase that covers up to 3 computers at a time (Mac
 - [Crisp terms](https://crispvideo.app/legal/terms/)
 - [Crisp privacy](https://crispvideo.app/legal/privacy/)
 - [Crisp refunds](https://crispvideo.app/legal/refunds/)
-- [Docket SEO terms](https://docketseo.app/legal/terms/)
-- [Docket SEO privacy](https://docketseo.app/legal/privacy/)
-- [Docket SEO refunds](https://docketseo.app/legal/refunds/)
+- [Check Engine SEO terms](https://checkengineseo.com/legal/terms/)
+- [Check Engine SEO privacy](https://checkengineseo.com/legal/privacy/)
+- [Check Engine SEO refunds](https://checkengineseo.com/legal/refunds/)
 - [AdPlaybook terms](https://adplaybook.app/terms/)
 - [AdPlaybook privacy](https://adplaybook.app/privacy/)
 - [Outlier terms](https://outlier.host/terms.html)
@@ -48,7 +48,7 @@ Each licence is a one-time purchase that covers up to 3 computers at a time (Mac
 
 - [Outlier](https://outlier.host/): private, offline AI for your Mac
 - [Crisp Video](https://crispvideo.app/): restore and upscale video offline on your Mac
-- [Docket SEO](https://docketseo.app/): website audits that rank what to fix first
+- [Check Engine SEO](https://checkengineseo.com/): website audits that rank what to fix first
 - [AdPlaybook](https://adplaybook.app/): ad copy within every platform's limits
 - [Bookbreaker](https://bookbreaker.bet/): free arbitrage and +EV betting app for Mac
 - [Built by Kerr](https://builtbykerr.com/): websites and local SEO for Grand Rapids businesses

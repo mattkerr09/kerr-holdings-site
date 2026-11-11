@@ -82,7 +82,9 @@ def published_paths(repo: Path) -> list[str]:
     files = [f for f in out.stdout.split()
              if f.endswith(".html") and not f.startswith(("404", "_"))]
     # The homepage stays: this domain is now the LLC entity page.
-    return sorted(f for f in files if f != "index.html")
+    # On 11 Nov 2026, the CEO approved local legal destinations for these stubs.
+    local_pages = {"index.html", "legal/terms.html", "legal/privacy.html"}
+    return sorted(f for f in files if f not in local_pages)
 
 
 def target(rel: str) -> str:

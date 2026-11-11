@@ -236,7 +236,9 @@ class LegalMirrors(unittest.TestCase):
         html = (ROOT / "legal/index.html").read_text(encoding="utf-8")
         body = html.split('<div class="wrap doc">')[1].split("</main>")[0]
         expected = [
+            ("/legal/site-terms/", "Site terms: Terms for using this company website."),
             ("/privacy/", "Site privacy: What the company website collects and who sees it."),
+            ("/security/", "Security: How to report a security problem with our websites or apps."),
             ("/terms/", "Post Desk terms: Terms for using Post Desk."),
             ("/about/", "Company details: Who Kerr & Company LLC is and how to contact us."),
             ("/legal/crisp/", "Crisp legal mirror: Crisp's terms, privacy policy and refund policy."),
@@ -249,7 +251,7 @@ class LegalMirrors(unittest.TestCase):
         for route, line in expected:
             print(f"  {line} [{route}]")
 
-    def test_sitemap_only_adds_index(self):
+    def test_sitemap_only_adds_approved_legal_pages(self):
         raw = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
         ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
         entries = ET.fromstring(raw).findall("s:url", ns)
@@ -259,10 +261,10 @@ class LegalMirrors(unittest.TestCase):
         for slug in SOURCE_FILES:
             self.assertNotIn(mirror.SITE + f"/legal/{slug}/", raw)
         baseline, removed = re.subn(
-            r"  <url>\n    <loc>https://kerrandcompanyholdings.com/legal/</loc>\n.*?  </url>\n",
+            r"  <url>\n    <loc>https://kerrandcompanyholdings.com/(?:legal/|legal/site-terms/|security/)</loc>\n.*?  </url>\n",
             "", raw, flags=re.S,
         )
-        self.assertEqual(removed, 1)
+        self.assertEqual(removed, 3)
         # SHA-256 of sitemap.xml at job base 2a716c9, including whitespace.
         self.assertEqual(hashlib.sha256(baseline.encode()).hexdigest(),
                          "a773a657a1c3f6e919f11ab72e3c8e6ef7e2a23647cfce53b8c2dde4200ce1c5")
