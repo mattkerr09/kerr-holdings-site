@@ -3,3 +3,7 @@
 exclude:
   - README.md
   - scripts
+  - data
+# 11 Nov: data/ holds the dated source copies behind /legal/ (evidence, not pages); .well-known/security.txt must be served.
+include:
+  - .well-known
